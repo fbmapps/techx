@@ -1,0 +1,6 @@
+Bottle v0.12.13 server starting up (using WSGIRefServer())...
+Listening on http://0.0.0.0:5105/
+Hit Ctrl-C to quit.
+
+/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/bottle.py:3129: ResourceWarning: unclosed <socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 5105)>
+  pass
