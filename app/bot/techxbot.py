@@ -36,7 +36,7 @@ def botSparkGET(url,headers):
     '''
     This function will hear any message that webhook receive and will process it accordingly
     '''
-    r = requests.get(url,headers=headers)
+    r = requests.request('GET',url,headers=headers)
     contents = r.text
     return contents
 
@@ -106,6 +106,12 @@ def techxbot():
     result = json.loads(result)
     data['roomId'] = str(webhook['data']['roomId'])
 
+
+    if 'errors' in result:    #Catch any error from webhook and close procedure
+       return
+
+
+
     if webhook['data']['personEmail'] != bot_email:
         in_message = result.get('text','').lower()
         in_message = in_message.replace(bot_name,'')
@@ -119,9 +125,9 @@ def techxbot():
            msg = "I do not understand the request. **Ask later!!**"
            data['markdown'] =  msg
            data['file'] = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
-        
-        #BUILD THE ANSWER AND SEND IT TO SPARK
-        payload =  json.dumps(data)
-        botSparkPOST(post_url,payload,headers)
-    return "true"
+
+    
+    payload =  json.dumps(data)
+    botSparkPOST(post_url,payload,headers)
+    return "200 OK"
 
