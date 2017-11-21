@@ -16,6 +16,30 @@ import os, sys, time, datetime
 class SportStats():
 
 
+    def todayResults(self):
+       games = []
+       date = datetime.datetime.now().strftime("%Y%m%d")
+       query_url= 'http://data.nba.net/data/10s/prod/v1/{0}/scoreboard.json'.format(date) 
+       data = self.queryAPI(query_url)
+      
+       for game in data['games']:
+          if game['statusNum'] == 3: #Game has finished
+             hTeam,hConf = self.searchTeam(game['hTeam']['teamId'])
+             hTeamScore = game['hTeam']['score']    
+             vTeam,vConf = self.searchTeam(game['vTeam']['teamId'])
+             vTeamScore = game['vTeam']['score']
+               
+       
+             d = {'hTeam' : hTeam,
+                  'vTeam' : vTeam,
+                  'hScore' : hTeamScore,
+                  'vScore' : vTeamScore
+                 }
+             games.append(d)
+    
+       return games
+
+
     def todayGames(self):
        games = []
        date = datetime.datetime.now().strftime("%Y%m%d")

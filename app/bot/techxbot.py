@@ -149,7 +149,17 @@ def techxbot():
                today_match = today_match + "- **" + game['vTeam'] + "** AT **" + game['hTeam'] + "**  *" + game['sTime'] +"* \n"
            msg = today_gm + today_match
            data['markdown'] = msg 
-        else:
+        
+        elif 'nbaresult' in in_message:
+           today_gm = "\n**Games Results for Today**\n"
+           today_match = '' 
+           games = nba.todayResults()
+           for game in games:
+               today_match = today_match + "- **" + game['vTeam'] + "** : **"+ game['vScore']  + "** AT **" + game['hTeam'] + "** :  **" + game['hScore'] +"** \n"
+           msg = today_gm + today_match
+           data['markdown'] = msg 
+        
+        else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            data['markdown'] =  msg
            data['file'] = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
