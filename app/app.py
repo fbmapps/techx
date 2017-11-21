@@ -14,9 +14,11 @@ micro framework is bottle
 '''
 
 #Libraries
+import bottle
 from bottle import route,run
 import os, sys
 from bot import techxbot
+
 
 #Functions (IF ANY)
 
@@ -26,6 +28,6 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT',5105))
     run(host='0.0.0.0',port=port,debug=True)
 
-
-
+#FOR GUNICORN
+app = bottle.default_app()
 
