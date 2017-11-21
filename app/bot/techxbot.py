@@ -18,6 +18,11 @@ import re, json
 import requests
 import os,sys
 
+#Local Classes from models.py
+from bot.models import SportStats
+
+
+
 #Global Variables
 bot_token = str(os.environ['BOT_KEY'])
 bot_email = str(os.environ['BOT_EMAIL'])
@@ -96,7 +101,7 @@ def techxbot():
     resp = {}                #LOCAL RESP DICTIONARY AUXILIARY
     msg = ''                 #THIS WILL BE THE MSG TO BE POSTED AT SPARK ROOM
 
-
+    nba = SportStats()       #The bot read nba Stats from data.nba.net
 
 
     webhook = request.json   #INFO FROM SPARK IN JSON FORMAT
@@ -121,6 +126,29 @@ def techxbot():
            msg = "Yes, I'm Here preparing myself to receive **orders** in the near future"
            data['markdown'] = msg
            data['file'] = 'https://d30y9cdsu7xlg0.cloudfront.net/png/1033931-200.png'
+        elif 'nbarank' in in_message:
+           stats = nba.teamStanding()
+           east_ttl = "\n**East Conference:** \n"
+           west_ttl = "\n**West Conference:** \n"
+           east_msg = ''
+           west_msg = ''
+           
+           for stat in stats:
+               if stat['conf'] == 'East':
+                  east_msg = east_msg + stat['ranking'] + ". **" + stat['teamName'] + "** W:**" + stat['wins'] + "** L: **" + stat['loss'] + "** \n"
+               else:
+                  west_msg = west_msg + stat['ranking'] + ". **" + stat['teamName'] + "** W:**" + stat['wins'] + "** L: **" + stat['loss'] + "** \n"
+           msg = "**Latest NBA Ranking:** \n".format(str(webhook['data']['personEmail'])) + east_ttl + east_msg + west_ttl + west_msg
+           data['markdown'] = msg
+           data['file'] = "http://media.nola.com/hornets_impact/photo/10295491-small.jpg"   
+        elif 'nbagame' in in_message:
+           today_gm = "\n**Games for Today**\n"
+           today_match = '' 
+           games = nba.todayGames()
+           for game in games:
+               today_match = today_match + "- **" + game['vTeam'] + "** AT **" + game['hTeam'] + "**  *" + game['sTime'] +"* \n"
+           msg = today_gm + today_match
+           data['markdown'] = msg 
         else:
            msg = "I do not understand the request. **Ask later!!**"
            data['markdown'] =  msg
