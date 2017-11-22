@@ -19,7 +19,7 @@ import requests
 import os,sys
 
 #Local Classes from models.py
-from bot.models import SportStats
+from bot.models import SportStats, PrimeAPI
 
 
 
@@ -100,9 +100,10 @@ def techxbot():
     data = {}                #LOCAL DATA DICTIONARY TO BUILD THE PAYLOAD TO SEND BACK TO SPARK
     resp = {}                #LOCAL RESP DICTIONARY AUXILIARY
     msg = ''                 #THIS WILL BE THE MSG TO BE POSTED AT SPARK ROOM
+    url = ''
 
     nba = SportStats()       #The bot read nba Stats from data.nba.net
-
+    pri = PrimeAPI()         #The bot read PRIME devices status summary 
 
     webhook = request.json   #INFO FROM SPARK IN JSON FORMAT
     get_url = "https://api.ciscospark.com/v1/messages/{0}".format(webhook['data']['id'])      #READ THE MESSAGE ID 
@@ -124,8 +125,7 @@ def techxbot():
         #Logic for parsing instruction messages
         if 'ruthere' in in_message or 'ready' in in_message:
            msg = "Yes, I'm Here preparing myself to receive **orders** in the near future"
-           data['markdown'] = msg
-           data['file'] = 'https://d30y9cdsu7xlg0.cloudfront.net/png/1033931-200.png'
+           url = 'https://d30y9cdsu7xlg0.cloudfront.net/png/1033931-200.png'
         elif 'nbarank' in in_message:
            stats = nba.teamStanding()
            east_ttl = "\n**East Conference:** \n"
@@ -139,8 +139,7 @@ def techxbot():
                else:
                   west_msg = west_msg + stat['ranking'] + ". **" + stat['teamName'] + "** W:**" + stat['wins'] + "** L: **" + stat['loss'] + "** \n"
            msg = "**Latest NBA Ranking:** \n".format(str(webhook['data']['personEmail'])) + east_ttl + east_msg + west_ttl + west_msg
-           data['markdown'] = msg
-           data['file'] = "http://media.nola.com/hornets_impact/photo/10295491-small.jpg"   
+           url = "http://media.nola.com/hornets_impact/photo/10295491-small.jpg"   
         elif 'nbagame' in in_message:
            today_gm = "\n**Games for Today**\n"
            today_match = '' 
@@ -148,7 +147,6 @@ def techxbot():
            for game in games:
                today_match = today_match + "- **" + game['vTeam'] + "** AT **" + game['hTeam'] + "**  *" + game['sTime'] +"* \n"
            msg = today_gm + today_match
-           data['markdown'] = msg 
         
         elif 'nbaresult' in in_message:
            today_gm = "\n**Games Results for Today**\n"
@@ -157,15 +155,21 @@ def techxbot():
            for game in games:
                today_match = today_match + "- **" + game['vTeam'] + "** : **"+ game['vScore']  + "** AT **" + game['hTeam'] + "** :  **" + game['hScore'] +"** \n"
            msg = today_gm + today_match
-           data['markdown'] = msg 
-        
+        elif 'getprime' in in_message:
+           devs = pri.getDevices()
+           if int(devs['queryResponse']['@count']) == 0:
+              msg = "**Everything looks Good! All devices seems reachables!!**"
+              url = 'https://t6.rbxcdn.com/023c0a0a3aa7fb0629725f2ebe365f8f'
+           else:
+              msg = "**Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']))
+              url = 'https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png'
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
-           data['markdown'] =  msg
-           data['file'] = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
+           url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
 
-    
+    data['markdown'] = msg
+    data['file'] = url
     payload =  json.dumps(data)
     botSparkPOST(post_url,payload,headers)
-    return "200 OK"
+    return "{'result' : '200 OK'}"
 

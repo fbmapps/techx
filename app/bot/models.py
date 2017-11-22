@@ -11,10 +11,36 @@ import requests
 import json
 import os, sys, time, datetime
 
+class PrimeAPI():
+    def checkStatus(self):
+        return "class ok"
 
+    def __init__(self):
+        self.user = str(os.environ['PRM_USER'])                #API USER
+        self.passd = str(os.environ['PRM_PASW'])               #API PASS
+        self.apiURI = str(os.environ['PRM_URL'])               #PRIME SERVER URL
+
+
+    def queryAPI(self,url):
+        apiurl = self.apiURI + url
+        r = requests.get(apiurl,auth=(self.user,self.passd),verify=False)
+        result = r.text
+        data = json.loads(result)
+        return data
+
+
+    def getDevices(self):
+        url = "/webacs/api/v1/data/Devices.json?.full=true&.sort=ipAddress&reachability=UNREACHABLE"
+        data = self.queryAPI(url)
+
+        return data
+
+
+
+
+#============ HIDDEN GEMS ==============#
 
 class SportStats():
-
 
     def todayResults(self):
        games = []
