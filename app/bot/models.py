@@ -62,7 +62,7 @@ class PrimeAPI():
 
     def getAllDevices(self):
          
-        url = "/webacs/api/v1/data/Devices.json?.full=true&.sort=ipAddress&.firstResult=0&.maxResults=999"
+        url = "/webacs/api/v1/data/Devices.json?.full=true&.sort=ipAddress&.firstResult=0&.maxResults=19"
         data = self.queryAPI(url)
         return data
 

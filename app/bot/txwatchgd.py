@@ -24,6 +24,14 @@ from sqlalchemy.orm import sessionmaker
 
 
 #Common Functions
+def DateDiff(dtNew, dtOld):
+   
+   diff = round((dtNew - dtOld).total_seconds())
+    
+   return diff
+
+
+
 def DataCollector(p,dbs):
    
    #REQUESTS ALL Prime Devices
@@ -100,14 +108,21 @@ def DataCollector(p,dbs):
          if record.status != devStatus: #Status has changed
             record.status = devStatus
             record.status_change_count = record.status_change_count + 1
-            if devStatus == 'UNREACHABLE':
-               #LOGIC To Check if 5minutes passed to restart notify is needed here 
+         if devStatus == 'UNREACHABLE':
+            #LOGIC To Check if 5minutes passed to restart notify is needed here 
+            diff = DateDiff(datetime.datetime.now(),record.last_bot_notify)
+            if diff > 300:
                record.bot_notify_request = True
+               record.last_bot_notify = datetime.datetime.now()
+               record.bot_notify_count = record.bot_notify_count + 1
             else:
                record.bot_notify_request = False
-            dbs.commit()
          else:
-             pass
+            record.bot_notify_request = False
+         
+
+         dbs.commit()
+        
       
 
 
@@ -132,8 +147,23 @@ def DataCollector(p,dbs):
 
 
 
-def SparkNotifier():
-   pass
+def SparkNotifier(dbs):
+   records = dbs.query(Notification).filter(Notification.bot_notify_request==True)
+  
+   msg = ''
+   spark_url = 'http://63.231.220.94/techx/'
+   msg_header = '\n**Unreachable Device List**\n'
+   msg_body = ''
+
+   for record in records:
+      msg_body = msg_body + "\n - Device: **" + record.devName +"** ipAdd: **" + record.ipAdd + "** location: **" + record.location + "**\n" 
+      record.bot_notify_request = True
+
+      dbs.commit()
+   
+   msg = msg_header + msg_body
+
+   return {'response' : '200', 'data': msg}
 
 
 
@@ -142,16 +172,21 @@ def SparkNotifier():
 def main():
    p = PrimeAPI()
 
-   db = create_engine('sqlite:///techxdb.db', echo=True)
+   db = create_engine('sqlite:///techxdb.db',echo=True)
    Base.metadata.create_all(db)
    Base.metadata.bind = db
    DBSession = sessionmaker(bind=db)
 
    dbs = DBSession()
+   
+   #Process Data 
+   #devices = DataCollector(p,dbs)
+   
+   #Send Message for bot Request = True
+   response = SparkNotifier(dbs)     
 
-   devices = DataCollector(p,dbs)
-
-   return devices['this_set_has']
+       
+   return response
 
 
 
