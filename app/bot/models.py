@@ -11,6 +11,38 @@ import requests
 import json
 import os, sys, time, datetime
 
+#==== DATABASE Libraries ======
+from sqlalchemy import Column, Integer, Sequence, String, DateTime, Boolean 
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+
+Base = declarative_base()
+#db = create_engine('sqlite:///techxdb.db') 
+
+class Notification(Base):
+    __tablename__ = 'notification'
+    id = Column(Integer, primary_key=True)
+    devId = Column(String(100),nullable=False)
+    devName = Column(String(100),nullable=False)
+    ipAdd = Column(String(20),nullable=False)
+    location = Column(String(100))
+    status = Column(String(100),nullable=False)
+    bot_notify_request = Column(Boolean)
+    last_bot_notify = Column(DateTime)
+    bot_notify_count = Column(Integer) 
+    last_status_change = Column(DateTime)
+    status_change_count = Column(Integer)
+    record_created = Column(DateTime)
+    
+
+
+
+
+
+
+
+
+#============ API CALLS Wrapper =================#
 class PrimeAPI():
     def checkStatus(self):
         return "class ok"
@@ -26,6 +58,12 @@ class PrimeAPI():
         r = requests.get(apiurl,auth=(self.user,self.passd),verify=False)
         result = r.text
         data = json.loads(result)
+        return data
+
+    def getAllDevices(self):
+         
+        url = "/webacs/api/v1/data/Devices.json?.full=true&.sort=ipAddress&.firstResult=0&.maxResults=999"
+        data = self.queryAPI(url)
         return data
 
 

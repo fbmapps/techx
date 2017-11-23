@@ -147,7 +147,6 @@ def techxbot():
            for game in games:
                today_match = today_match + "- **" + game['vTeam'] + "** AT **" + game['hTeam'] + "**  *" + game['sTime'] +"* \n"
            msg = today_gm + today_match
-        
         elif 'nbaresult' in in_message:
            today_gm = "\n**Games Results for Today**\n"
            today_match = '' 
@@ -166,10 +165,15 @@ def techxbot():
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
+    
+    
 
-    data['markdown'] = msg
-    data['file'] = url
-    payload =  json.dumps(data)
+    if url != '':
+       data['file'] = url
+    
+    data['markdown'] = msg 
+    
+    payload = json.dumps(data)
     botSparkPOST(post_url,payload,headers)
     return "{'result' : '200 OK'}"
 

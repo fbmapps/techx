@@ -26,7 +26,7 @@ from bot import techxbot
 #Main program
 if __name__ == '__main__':
     port = int(os.environ.get('PORT',5105))
-    run(host='0.0.0.0',port=port,debug=True)
+    run(host='0.0.0.0',port=port,debug=True,reloader=True)
 
 #FOR GUNICORN
 app = bottle.default_app()
