@@ -44,7 +44,7 @@ def DataCollector(p,dbs):
       devIPAdd = dev['devicesDTO']['ipAddress']
       devStatus = dev['devicesDTO']['reachability']
       devID = dev['devicesDTO']['@displayName']
-      if dev['devicesDTO']['productFamily'] == 'Wireless Controller':
+      if 'location' not in dev['devicesDTO']:
          devLocation = ''
       else:
          devLocation = dev['devicesDTO']['location']
