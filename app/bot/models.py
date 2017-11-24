@@ -25,6 +25,7 @@ class Notification(Base):
     devId = Column(String(100),nullable=False)
     devName = Column(String(100),nullable=False)
     ipAdd = Column(String(20),nullable=False)
+    url = Column(String(250))
     location = Column(String(100))
     status = Column(String(100),nullable=False)
     bot_notify_request = Column(Boolean)
@@ -163,7 +164,6 @@ class SportStats():
        i = 0
        now = datetime.datetime.now()
        query_url = 'http://data.nba.net/data/10s/prod/v1/{0}/teams.json'.format(str(now.year))
-       #query_url = 'http://data.nba.net/data/1h/prod/{0}/teams_config.json'.format(str(now.year))
 
        data = self.queryAPI(query_url)
 

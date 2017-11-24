@@ -80,10 +80,13 @@ def txBotNotify():
     '''
     
     note = request.json  
+   
+    msg = str(note['msg'])
+    url = str(note['file'])
     data = {}
     data['roomId'] = bot_room
-    data['markdown'] = note['msg']
-    data['file']= note['file']
+    data['markdown'] = msg
+    data['file']= url
     payload = json.dumps(data)
     r = botSparkPOST(msg_url,payload,headers)
 
@@ -191,5 +194,5 @@ def techxbot():
     
     payload = json.dumps(data)
     botSparkPOST(post_url,payload,headers)
-    return "{'result' : '200 OK'}"
+    return {'result' : '200 OK'}
 

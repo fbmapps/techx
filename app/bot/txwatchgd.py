@@ -16,39 +16,30 @@ from models import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-#db = create_engine('sqlite:///techxdb.db')
-#Base.metadata.create_all(db)
-#Base.metadata.bind = db
-#DBSession = sessionmaker(bind=db)
+
+#============= Disabling Insecure Warning================================#
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 
 #Common Functions
 def DateDiff(dtNew, dtOld):
-   
    diff = round((dtNew - dtOld).total_seconds())
-    
    return diff
 
 
 
 def DataCollector(p,dbs):
-   
    #REQUESTS ALL Prime Devices
    devs = p.getAllDevices()
    devices = [] 
-   
    devCollected = devs['queryResponse']['@count']
      
    #Process the DataSet
-     
-
-  
    for dev in devs['queryResponse']['entity']:
-
-
-
-
+     
+      devURL = dev['@url']
       devName = dev['devicesDTO']['deviceName'] 
       devIPAdd = dev['devicesDTO']['ipAddress']
       devLocation = dev['devicesDTO']['location']
@@ -73,6 +64,7 @@ def DataCollector(p,dbs):
          new_dev = Notification(devId = devID,
                                 devName = devName,
                                 ipAdd = devIPAdd,
+                                url = devURL,
                                 location = devLocation,
                                 status = devStatus,
                                 bot_notify_request = botNotify,
@@ -87,7 +79,6 @@ def DataCollector(p,dbs):
          dbs.commit()
                      
  
- 	       
                          
       else:     #The device record exist in Table
          #Update Existing Record
@@ -127,8 +118,6 @@ def DataCollector(p,dbs):
       devices.append(d)
 
 
-   #Send the response as JSON Dictionary
-   return {'this_set_has' : devCollected, 'collection' : devices}
 
 
 
@@ -137,7 +126,7 @@ def SparkNotifier(dbs):
    records = dbs.query(Notification).filter(Notification.bot_notify_request==True)
   
    msg = ''
-   bot_url = 'http://63.231.220.94/techx/note/'
+   bot_url = 'http://63.231.220.94:5105/techx/note/'
    msg_header = '\n**Unreachable Device List**\n'
    msg_body = ''
    note = {}   
@@ -149,7 +138,7 @@ def SparkNotifier(dbs):
 
 
    for record in records:
-      msg_body = msg_body + "\n - Device: **" + record.devName +"** ipAdd: **" + record.ipAdd + "** location: **" + record.location + "**\n" 
+      msg_body = msg_body + "\n - Device: **" + record.devName +"** ipAdd: **" + record.ipAdd + "** location: **" + record.location + "** [more...](" + record.url + ")\n" 
       record.bot_notify_request = True
 
       dbs.commit()
@@ -178,21 +167,25 @@ def SparkNotifier(dbs):
 def main():
    p = PrimeAPI()
 
-   db = create_engine('sqlite:///techxdb.db',echo=True)
+   db = create_engine('sqlite:///techxdb.db')
    Base.metadata.create_all(db)
    Base.metadata.bind = db
    DBSession = sessionmaker(bind=db)
 
    dbs = DBSession()
    
-   #Process Data 
-   #devices = DataCollector(p,dbs)
-   
+   #Process Data
+   print('Processing Data...')
+   devices = DataCollector(p,dbs)
+  
+   time.sleep(5)
+
    #Send Message for bot Request = True
+   print('Sending Notification...')
    response = SparkNotifier(dbs)     
 
-       
-   return response
+   print('Process Complete')    
+   return {"response" : "200 OK" }
 
 
 
@@ -200,7 +193,7 @@ def main():
 
 #Main Program
 if __name__ == "__main__":
-    print(main())
+    main()
 
 
 
