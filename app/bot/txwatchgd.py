@@ -38,13 +38,17 @@ def DataCollector(p,dbs):
      
    #Process the DataSet
    for dev in devs['queryResponse']['entity']:
-     
+      
       devURL = dev['@url']
       devName = dev['devicesDTO']['deviceName'] 
       devIPAdd = dev['devicesDTO']['ipAddress']
-      devLocation = dev['devicesDTO']['location']
       devStatus = dev['devicesDTO']['reachability']
       devID = dev['devicesDTO']['@displayName']
+      if dev['devicesDTO']['productFamily'] == 'Wireless Controller':
+         devLocation = ''
+      else:
+         devLocation = dev['devicesDTO']['location']
+       
   
       #Check If device exist in database
       
