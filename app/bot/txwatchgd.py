@@ -41,21 +41,7 @@ def DataCollector(p,dbs):
    devCollected = devs['queryResponse']['@count']
      
    #Process the DataSet
-   #new_dev = Notification(devId='111',
-   #                       devName='TestDev',
-   #                       ipAdd='1.1.1.1',
-   #                       location='MyLocation',
-   #                       status='UNREACHABLE',
-   #                       bot_notify_request=True,
-   #                       last_bot_notify=datetime.datetime.now(),
-   #                       bot_notify_count=0,
-   #                       last_status_change=datetime.datetime.now(),
-   #                       status_change_count=0,
-   #                       record_created=datetime.datetime.now()
-   #                      ) 
-   #dbs.add(new_dev)
-   #dbs.commit()
-      
+     
 
   
    for dev in devs['queryResponse']['entity']:
@@ -151,9 +137,16 @@ def SparkNotifier(dbs):
    records = dbs.query(Notification).filter(Notification.bot_notify_request==True)
   
    msg = ''
-   spark_url = 'http://63.231.220.94/techx/'
+   bot_url = 'http://63.231.220.94/techx/note/'
    msg_header = '\n**Unreachable Device List**\n'
    msg_body = ''
+   note = {}   
+   url = 'https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png'
+   headers = {"Accept" : "application/json",
+              "Content-Type" : "application/json",
+              "cache-control" : "no-cache"
+             }    
+
 
    for record in records:
       msg_body = msg_body + "\n - Device: **" + record.devName +"** ipAdd: **" + record.ipAdd + "** location: **" + record.location + "**\n" 
@@ -162,8 +155,21 @@ def SparkNotifier(dbs):
       dbs.commit()
    
    msg = msg_header + msg_body
+   
+   note['msg'] = msg
+   note['file'] = url
 
-   return {'response' : '200', 'data': msg}
+   payload = json.dumps(note)
+   
+   r = requests.request('POST',bot_url,data=payload,headers=headers)
+
+
+   
+       
+
+
+
+   return {'response' : r.status_code , 'data': msg}
 
 
 

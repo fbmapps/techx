@@ -72,6 +72,22 @@ def techxbotPUT(msg):
 
 
 
+@post("/techx/note/")
+def txBotNotify():
+    '''
+    This URI is for push message to BOT_ROOM
+    will send the message when react to an stimulus
+    '''
+    
+    note = request.json  
+    data = {}
+    data['roomId'] = bot_room
+    data['markdown'] = note['msg']
+    data['file']= note['file']
+    payload = json.dumps(data)
+    r = botSparkPOST(msg_url,payload,headers)
+
+    return str(r.status_code)
 
 
 
