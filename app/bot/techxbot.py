@@ -229,7 +229,9 @@ def techxbot():
         elif 'getbitcoin' in in_message:
            rate = btc.getBTCRate()
            msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
-            
+        elif 'whereis' in in_message:
+           ipaddr = in_message.split('whereis ',1)[1]
+           msg = "Sure looking for ip  **{0}**. I'll check and be back to you soon!".format(ipaddr)   
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"

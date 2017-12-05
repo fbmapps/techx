@@ -110,7 +110,17 @@ class CmxAPI():
         return data
 
     def getClientByMAC(self,macaddr):
-        url = "api/location/v2/clients/" + str(macaddr)
+        url = "api/location/v2/clients?macAddress=" + str(macaddr)
+        data = self.queryAPI(url)
+        return data
+
+    def getClientByIP(self,ipaddr):
+        url = "api/location/v2/clients?ipAddress=" + str(ipaddr)
+        data = self.queryAPI(url)
+        return data
+
+    def getClientByUserName(self,username):
+        url = "api/location/v2/clients?username=" + str(username)
         data = self.queryAPI(url)
         return data
 
