@@ -2,7 +2,7 @@
 TECHX BOT FUNCTIONAL SCRIPT
 CREATED BY FRBELLO AT CISCO DOT COM
 DATE NOV 2017
-VERSION 0.1
+VERSION 0.2
 STATE ALPHA
 
 DESCRIPTION: 
@@ -19,7 +19,7 @@ import requests
 import os,sys
 
 #Local Classes from models.py
-from bot.models import SportStats, PrimeAPI
+from bot.models import SportStats, PrimeAPI, CmxAPI, BitcoinEx
 
 
 
@@ -34,6 +34,9 @@ headers = {"Accept" : "application/json",
            "cache-control" : "no-cache" , 
            "Authorization" : "Bearer " +bot_token 
           }
+
+#===== Disable Warnings in Security =====
+requests.packages.urllib3.disable_warnings()
 
 
 #Functions (Spark GET and POST)
@@ -70,6 +73,25 @@ def techxbotPUT(msg):
 
     return str(r.status_code)
 
+@post('/techx/v1/alert/')
+def txtReceiveAlarm():
+    '''
+    RECEIVING ALERTS FROM GRAFANA AND SENDIT TO Spark
+    '''
+    alert = request.json
+    msg = str(alert['message'])
+    url = str(alert['imageUrl'])
+    
+    data = {}
+    
+    data['roomId'] = bot_room
+    data['markdown'] = msg
+    data['file'] = url
+    payload = json.dumps(data)
+    r = botSparkPOST(msg_url,payload,headers)
+     
+    return {"response" : r.status_code }
+
 
 
 @post("/techx/note/")
@@ -90,6 +112,23 @@ def txBotNotify():
     payload = json.dumps(data)
     r = botSparkPOST(msg_url,payload,headers)
 
+    return str(r.status_code)
+
+@post("/techx/v1/ifttt/")
+def txbIFTTT():
+    '''
+    Integration of Amazon Alexa, Spark and IFTT via Webhook
+    '''
+    data = {}
+    cmd = request.json
+    action = cmd['cmd']
+    
+
+    data['roomId'] = bot_room
+    data['markdown'] = "**It looks like Alexa is calling me!!!** She is asking for:\n" + str(action)  +"\n **Request received via Amazon Alexa and IFTTT**\n"
+    payload = json.dumps(data)
+    r = botSparkPOST(msg_url,payload,headers)
+    
     return str(r.status_code)
 
 
@@ -120,9 +159,13 @@ def techxbot():
     resp = {}                #LOCAL RESP DICTIONARY AUXILIARY
     msg = ''                 #THIS WILL BE THE MSG TO BE POSTED AT SPARK ROOM
     url = ''
-
+    
+    #API CALLS OBJECTS
     nba = SportStats()       #The bot read nba Stats from data.nba.net
-    pri = PrimeAPI()         #The bot read PRIME devices status summary 
+    pri = PrimeAPI()         #The bot read PRIME devices status summary
+    cmx = CmxAPI()           #The bot read CMX info from API
+    btc = BitcoinEx()        #The bot is able to read and give you Current Bitcoint Value in USD
+
 
     webhook = request.json   #INFO FROM SPARK IN JSON FORMAT
     get_url = "https://api.ciscospark.com/v1/messages/{0}".format(webhook['data']['id'])      #READ THE MESSAGE ID 
@@ -130,11 +173,10 @@ def techxbot():
     result = botSparkGET(get_url,headers)
     result = json.loads(result)
     data['roomId'] = str(webhook['data']['roomId'])
-
+   
 
     if 'errors' in result:    #Catch any error from webhook and close procedure
        return
-
 
 
     if webhook['data']['personEmail'] != bot_email:
@@ -181,6 +223,13 @@ def techxbot():
            else:
               msg = "**Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']))
               url = 'https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png'
+        elif 'getcmxcount' in in_message:
+           conx = cmx.getClientsCount()
+           msg = "**We have *{0}* Active connections seen in CMX**".format(str(conx['count'])) 
+        elif 'getbitcoin' in in_message:
+           rate = btc.getBTCRate()
+           msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
+            
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"

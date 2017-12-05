@@ -16,6 +16,9 @@ from sqlalchemy import Column, Integer, Sequence, String, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 
+#====== DISABLING Security Warnings=======
+requests.packages.urllib3.disable_warnings()
+
 Base = declarative_base()
 #db = create_engine('sqlite:///techxdb.db') 
 
@@ -46,7 +49,7 @@ class Notification(Base):
 #============ API CALLS Wrapper =================#
 class PrimeAPI():
     def checkStatus(self):
-        return "class ok"
+        return {"response" : "200" }
 
     def __init__(self):
         self.user = str(os.environ['PRM_USER'])                #API USER
@@ -75,7 +78,41 @@ class PrimeAPI():
         return data
 
 
+class CmxAPI():
+    def checkStatus(self):
+        return {"response" : "200" }
 
+    def __init__(self):
+        self.user =  str(os.environ['CMX_USER'])
+        self.passd = str(os.environ['CMX_PASW'])
+        self.apiURI = str(os.environ['CMX_URI'])
+
+    def queryAPI(self,url):
+        apiurl = self.apiURI + url
+        r = requests.get(apiurl,auth=(self.user,self.passd),verify=False)
+        result = r.text
+        data = json.loads(result)
+        return data
+
+    def getMap(self):
+        url = "api/config/v1/maps"
+        data = self.queryAPI(url)
+        return data
+
+    def getClientsCount(self):
+        url = "api/location/v2/clients/count"
+        data = self.queryAPI(url)
+        return data
+
+    def getActiveClients(self): 
+        url = "api/location/v2/clients"
+        data = self.queryAPI(url)
+        return data
+
+    def getClientByMAC(self,macaddr):
+        url = "api/location/v2/clients/" + str(macaddr)
+        data = self.queryAPI(url)
+        return data
 
 #============ HIDDEN GEMS ==============#
 
@@ -175,4 +212,13 @@ class SportStats():
        return name,conf
 
 
+class BitcoinEx():
 
+    def __init__(self):
+       return
+
+    def getBTCRate(self):
+       data = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+       return data
+
+ 
