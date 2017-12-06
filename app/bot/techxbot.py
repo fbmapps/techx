@@ -13,7 +13,7 @@ this will be publish the GET and POST methods for spark bot.
 
 #Libraries
 from bottle import post,get,put,delete
-from bottle import request, response, template
+from bottle import request, response, template, static_file
 import re, json
 import requests
 import os,sys
@@ -56,6 +56,18 @@ def botSparkPOST(url,payload,headers):
     return contents
 
 
+def botSendMap(ipaddr,msg):
+    ''' This function is to send only a map to a boot room '''
+    data = {}
+    data["rommId"] = bot_room
+    data["markdown"] =  msg + maplk
+    print(data)
+    payload = json.dumps(data)
+    r = botSparkPOST(msg_url,payload,headers)
+
+    return(r.status_code)
+
+
 #Web Server Functions (BOTTLE GET,POST)
 @get("/techx/<msg>")
 def techxbotPUT(msg):
@@ -91,6 +103,12 @@ def txtReceiveAlarm():
     r = botSparkPOST(msg_url,payload,headers)
      
     return {"response" : r.status_code }
+
+
+@get('/techx/v1/cmxmaps/<filepath:re:.*\.(jpg|png|gif|ico|svg)>')
+def showImg(filepath):
+    return static_file(filepath, root="static")
+
 
 
 
@@ -231,7 +249,30 @@ def techxbot():
            msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
         elif 'whereis' in in_message:
            ipaddr = in_message.split('whereis ',1)[1]
-           msg = "Sure looking for ip  **{0}**. I'll check and be back to you soon!".format(ipaddr)   
+            
+           location = cmx.getClientByIP(ipaddr)
+           
+           if not location:
+               msg = "IP **{0}** not found in CMX".format(ipaddr)       
+           else: 
+               for record in location:
+                   ssid = record['ssId']
+                   username = record['userName']
+                   maps= record['mapInfo']['mapHierarchyString'].split('>')
+                   building = maps[0]
+                   level = maps[1]
+                   floor = maps[2]
+                   status = record['dot11Status']
+                   img =  record['mapInfo']['image']['imageName']
+                   x = record['mapCoordinate']['x']
+                   y = record['mapCoordinate']['y']
+                   lt= record['mapInfo']['floorDimension']['length']
+                   wt= record['mapInfo']['floorDimension']['width']
+                   resp=cmx.getMapImage(img,x,y,lt,wt,ipaddr)
+                   maplk = ">>[see on map here...](https://bot.xmplelab.com/static/img/{0}{1})".format(str(ipaddr).strip(),'.png')
+                   msg = "That IP **{0}** with the user **{1}** is **{5}** on the ssid **{2}** in building **{3}** on **{4}**  {6}".format(ipaddr,username,ssid,building,floor,status, maplk)
+                   #code = botSendMap(ipaddr,msg)                   
+ 
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
@@ -242,7 +283,6 @@ def techxbot():
        data['file'] = url
     
     data['markdown'] = msg 
-    
     payload = json.dumps(data)
     botSparkPOST(post_url,payload,headers)
     return {'result' : '200 OK'}

@@ -11,6 +11,15 @@ import requests
 import json
 import os, sys, time, datetime
 
+#===== Libraries for CMX Maps Processing ======
+import base64,re, uuid
+from PIL import Image as PilImage
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from io import StringIO, BytesIO
+from tkinter import *
+
 #==== DATABASE Libraries ======
 from sqlalchemy import Column, Integer, Sequence, String, DateTime, Boolean 
 from sqlalchemy.ext.declarative import declarative_base
@@ -86,18 +95,114 @@ class CmxAPI():
         self.user =  str(os.environ['CMX_USER'])
         self.passd = str(os.environ['CMX_PASW'])
         self.apiURI = str(os.environ['CMX_URI'])
+        self.PATH = str(os.environ['CMX_MAP'])        
 
-    def queryAPI(self,url):
+
+
+    def queryAPI(self,url,content=False):
         apiurl = self.apiURI + url
         r = requests.get(apiurl,auth=(self.user,self.passd),verify=False)
-        result = r.text
-        data = json.loads(result)
+        if content == True:
+           data = r.content
+        else:
+           result = r.text
+           data = json.loads(result)
         return data
+
 
     def getMap(self):
         url = "api/config/v1/maps"
         data = self.queryAPI(url)
         return data
+
+    def getMapImage(self,img,x,y,lt,wt,ipaddr):
+
+        #declare the file
+        file = self.PATH + img
+        
+        #check if image exist on disk
+        if os.path.isfile(file) == True:
+           #Encode in Base64 and Store
+           fb64 = self.encodeFile(file)
+        
+        else:
+           #Query the API
+           url="api/config/v1/maps/imagesource/" + str(img)
+           image = self.queryAPI(url,content=True)
+           
+           #Store the image
+           fh = open(file, "wb")
+           fh.write(image)
+           fh.close()
+           
+           #Encode Base64 version of the image
+           fb64 = self.encodeFile(file)
+
+        imgb = base64.b64decode(fb64)
+        mapinmem = BytesIO(imgb)
+
+        data = self.doMapPlot(mapinmem,x,y,lt,wt,ipaddr)
+
+        return { "response" : 200 , "data" : data }
+ 
+
+    def encodeFile(self,file):
+        f = open(file,"rb")
+        f_b64 = base64.b64encode(f.read())
+        f.close()
+
+        return f_b64    
+
+    def doMapPlot(self,mapinmem,x,y,lt,wt,ipaddr):
+        ''' Ploting method to put IP in map with a BullEye'''
+        buff = BytesIO() 
+        #_im=plt.imread(StringIO(mapinmem.decode('base64')), format='jpeg')
+
+        convertedim = PilImage.open(mapinmem).convert('P')
+        #Plot over the image 
+
+        implot = plt.imshow(convertedim, extent=[0,wt,0,lt], origin='lower', aspect=1)
+
+       
+        #Mark IP Coordinates received from CMX
+        
+        plt.scatter([x],[y],facecolor='r',edgecolor='r')
+        plt.scatter([x],[y],s=1000, facecolor='none',edgecolor='r')
+        plt.scatter([x],[y],s=2000, facecolor='none',edgecolor='r')
+        plt.scatter([x],[y],s=3500, facecolor='none',edgecolor='r')
+
+        #Correct the scale
+        ax = plt.gca()
+        ax.set_ylim([0,lt])
+        ax.set_xlim([0,wt])
+        
+        #match Y axis with CMX 
+        ax.set_ylim(ax.get_ylim()[::-1])
+        ax.xaxis.tick_top()
+
+
+        #SHow axis marking off
+        plt.axis('off')
+        
+
+        #Save new image in memory
+        plt.savefig(buff, format='png', dpi=500)
+        plt.gcf().clear()
+
+       
+        #Get the new Image
+        buff.seek(0)
+        newmaptagged = base64.b64encode(buff.read())
+
+        #Save Tagged img in disk
+        _name = str(ipaddr) + '.png'
+        file = self.PATH + _name
+        fh = open(file,"wb")
+        fh.write(base64.b64decode(newmaptagged))
+        fh.close()
+
+          
+        return { "tagmap" : _name }
 
     def getClientsCount(self):
         url = "api/location/v2/clients/count"
@@ -116,13 +221,15 @@ class CmxAPI():
 
     def getClientByIP(self,ipaddr):
         url = "api/location/v2/clients?ipAddress=" + str(ipaddr)
-        data = self.queryAPI(url)
+        data = self.queryAPI(url,False)
         return data
 
     def getClientByUserName(self,username):
         url = "api/location/v2/clients?username=" + str(username)
         data = self.queryAPI(url)
         return data
+
+    
 
 #============ HIDDEN GEMS ==============#
 
