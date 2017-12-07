@@ -248,14 +248,23 @@ def techxbot():
            rate = btc.getBTCRate()
            msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
         elif 'whereis' in in_message:
-           ipaddr = in_message.split('whereis ',1)[1]
-            
-           location = cmx.getClientByIP(ipaddr)
+           query = in_message.split('whereis ',1)[1]
            
+           print(query)
+                      
+           if query[0].isdigit() and query[1].isdigit():
+              location = cmx.getClientByIP(query.strip())
+           else:
+              location = cmx.getClientByUserName(query.strip())           
+           
+           print(location)
+
            if not location:
-               msg = "IP **{0}** not found in CMX".format(ipaddr)       
+               msg = "**{0}** not found in CMX".format(query)       
            else: 
                for record in location:
+                   ipaddr = record['ipAddress'][0]
+                   macaddr = record['macAddress']
                    ssid = record['ssId']
                    username = record['userName']
                    maps= record['mapInfo']['mapHierarchyString'].split('>')
@@ -269,10 +278,9 @@ def techxbot():
                    lt= record['mapInfo']['floorDimension']['length']
                    wt= record['mapInfo']['floorDimension']['width']
                    resp=cmx.getMapImage(img,x,y,lt,wt,ipaddr)
-                   maplk = ">>[see on map here...](https://bot.xmplelab.com/static/img/{0}{1})".format(str(ipaddr).strip(),'.png')
-                   msg = "That IP **{0}** with the user **{1}** is **{5}** on the ssid **{2}** in building **{3}** on **{4}**  {6}".format(ipaddr,username,ssid,building,floor,status, maplk)
-                   #code = botSendMap(ipaddr,msg)                   
- 
+                   maplk = "[see on map here...](https://bot.xmplelab.com/static/img/{0}{1})".format(str(ipaddr).strip(),'.png')
+                   msg = "This is what I've found: \n-  **{7}** is **{5}** on the ssid **{2}** \n - Building **{3}** at **{4}** \n-  IP: {0} \n - username: **{1}** \n - {6}".format(ipaddr,username,ssid,building,floor,status, maplk,query)                   
+              
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"

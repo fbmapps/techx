@@ -26,7 +26,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 
 #====== DISABLING Security Warnings=======
-requests.packages.urllib3.disable_warnings()
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 
 Base = declarative_base()
 #db = create_engine('sqlite:///techxdb.db') 
@@ -216,7 +218,7 @@ class CmxAPI():
 
     def getClientByMAC(self,macaddr):
         url = "api/location/v2/clients?macAddress=" + str(macaddr)
-        data = self.queryAPI(url)
+        data = self.queryAPI(url,False)
         return data
 
     def getClientByIP(self,ipaddr):
@@ -226,7 +228,7 @@ class CmxAPI():
 
     def getClientByUserName(self,username):
         url = "api/location/v2/clients?username=" + str(username)
-        data = self.queryAPI(url)
+        data = self.queryAPI(url,False)
         return data
 
     
