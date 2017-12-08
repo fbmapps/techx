@@ -18,10 +18,9 @@ import re, json
 import requests
 import os,sys
 
+
 #Local Classes from models.py
 from bot.models import SportStats, PrimeAPI, CmxAPI, BitcoinEx
-
-
 
 #Global Variables
 bot_token = str(os.environ['BOT_KEY'])
@@ -56,20 +55,8 @@ def botSparkPOST(url,payload,headers):
     return contents
 
 
-def botSendMap(ipaddr,msg):
-    ''' This function is to send only a map to a boot room '''
-    data = {}
-    data["rommId"] = bot_room
-    data["markdown"] =  msg + maplk
-    print(data)
-    payload = json.dumps(data)
-    r = botSparkPOST(msg_url,payload,headers)
-
-    return(r.status_code)
-
-
 #Web Server Functions (BOTTLE GET,POST)
-@get("/techx/<msg>")
+@get("/techx/v1/note/<msg>")
 def techxbotPUT(msg):
     '''
     This URI is for push message to BOT_ROOM
@@ -78,12 +65,12 @@ def techxbotPUT(msg):
      
     data = {}
     data['roomId'] = bot_room
-    data['markdown'] = str(msg) + " I'm **Reacting** to an Stimulus"
-    data['file']= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzZTLid7KPsrcQ6nKGx3WpBky4OJUsJAN13tmFLRk_GQQb3_bs"
+    data['markdown'] = str(msg)
+    #data['file']= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzZTLid7KPsrcQ6nKGx3WpBky4OJUsJAN13tmFLRk_GQQb3_bs"
     payload = json.dumps(data)
     r = botSparkPOST(msg_url,payload,headers)
 
-    return str(r.status_code)
+    return { "response" : str(r.status_code) }
 
 @post('/techx/v1/alert/')
 def txtReceiveAlarm():
@@ -105,14 +92,8 @@ def txtReceiveAlarm():
     return {"response" : r.status_code }
 
 
-@get('/techx/v1/cmxmaps/<filepath:re:.*\.(jpg|png|gif|ico|svg)>')
-def showImg(filepath):
-    return static_file(filepath, root="static")
 
-
-
-
-@post("/techx/note/")
+@post("/techx/v1/note/")
 def txBotNotify():
     '''
     This URI is for push message to BOT_ROOM
@@ -130,7 +111,7 @@ def txBotNotify():
     payload = json.dumps(data)
     r = botSparkPOST(msg_url,payload,headers)
 
-    return str(r.status_code)
+    return { "response" : str(r.status_code) }
 
 @post("/techx/v1/ifttt/")
 def txbIFTTT():
@@ -147,8 +128,7 @@ def txbIFTTT():
     payload = json.dumps(data)
     r = botSparkPOST(msg_url,payload,headers)
     
-    return str(r.status_code)
-
+    return { "response" : str(r.status_code) }
 
 
 @get("/techx/")
@@ -191,19 +171,20 @@ def techxbot():
     result = botSparkGET(get_url,headers)
     result = json.loads(result)
     data['roomId'] = str(webhook['data']['roomId'])
-   
+    personId = str(webhook['data']['personId'])
+
 
     if 'errors' in result:    #Catch any error from webhook and close procedure
        return
-
 
     if webhook['data']['personEmail'] != bot_email:
         in_message = result.get('text','').lower()
         in_message = in_message.replace(bot_name,'')
 
         #Logic for parsing instruction messages
+        
         if 'ruthere' in in_message or 'ready' in in_message:
-           msg = "Yes, I'm Here preparing myself to receive **orders** in the near future"
+           msg = "Yes <@personId:{0}>, I'm Here preparing myself to receive **orders** in the near future".format(personId)
            url = 'https://d30y9cdsu7xlg0.cloudfront.net/png/1033931-200.png'
         elif 'nbarank' in in_message:
            stats = nba.teamStanding()
@@ -233,31 +214,28 @@ def techxbot():
            for game in games:
                today_match = today_match + "- **" + game['vTeam'] + "** : **"+ game['vScore']  + "** AT **" + game['hTeam'] + "** :  **" + game['hScore'] +"** \n"
            msg = today_gm + today_match
-        elif 'getprime' in in_message:
-           devs = pri.getDevices()
-           if int(devs['queryResponse']['@count']) == 0:
-              msg = "**Everything looks Good! All devices seems reachables!!**"
-              url = 'https://t6.rbxcdn.com/023c0a0a3aa7fb0629725f2ebe365f8f'
-           else:
-              msg = "**Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']))
-              url = 'https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png'
-        elif 'getcmxcount' in in_message:
-           conx = cmx.getClientsCount()
-           msg = "**We have *{0}* Active connections seen in CMX**".format(str(conx['count'])) 
         elif 'getbitcoin' in in_message:
            rate = btc.getBTCRate()
            msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
+        elif 'getprime' in in_message:
+           devs = pri.getDevices()
+           if int(devs['queryResponse']['@count']) == 0:
+              msg = "**Everything looks Good <@personId:{0}>.  All devices appears to be reachables now!!**".format(personId)
+              url = 'https://t6.rbxcdn.com/023c0a0a3aa7fb0629725f2ebe365f8f'
+           else:
+              msg = "Hey <@personId:{1}> it seems you need to go and Check!!! \n - **Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']),personId)
+              url = "https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png"
+        elif 'getcmxcount' in in_message:
+           conx = cmx.getClientsCount()
+           msg = "**We have *{0}* Active connections seen in CMX**".format(str(conx['count'])) 
         elif 'whereis' in in_message:
            query = in_message.split('whereis ',1)[1]
-           
-           print(query)
                       
            if query[0].isdigit() and query[1].isdigit():
               location = cmx.getClientByIP(query.strip())
            else:
               location = cmx.getClientByUserName(query.strip())           
            
-           print(location)
 
            if not location:
                msg = "**{0}** not found in CMX".format(query)       
@@ -279,8 +257,23 @@ def techxbot():
                    wt= record['mapInfo']['floorDimension']['width']
                    resp=cmx.getMapImage(img,x,y,lt,wt,ipaddr)
                    maplk = "[see on map here...](https://bot.xmplelab.com/static/img/{0}{1})".format(str(ipaddr).strip(),'.png')
-                   msg = "This is what I've found: \n-  **{7}** is **{5}** on the ssid **{2}** \n - Building **{3}** at **{4}** \n-  IP: {0} \n - username: **{1}** \n - {6}".format(ipaddr,username,ssid,building,floor,status, maplk,query)                   
-              
+                   msg = """<@personId:{8}> This is what I've found:
+                          \n-  **{7}** is **{5}** on the ssid **{2}** 
+                          \n - Building **{3}** at **{4}** 
+                          \n-  IP: {0} 
+                          \n - username: **{1}** \n - {6}""".format(ipaddr,username,ssid,building,floor,status, maplk,query,personId)
+
+        elif 'help' in in_message:
+           msg = '''
+                 Hi <@personId:{0}>,  I'm a API helper. I'll look up info on PRIME, CMX, and any other location where my builders connect me at. To help you just call my name @techx.bot follow by any of this:\n
+                 \n - **getprime** : I'll give you the count of Reachables and Unreachables Devices 
+                 \n - **getcmxcount** : I'll show you the Actives connection from CMX
+                 \n - **whereis x.x.x.x or whereis username** : I'll contact CMX to see where this client is, and I will send you a link with a marked floorplan displaying the location
+                 \n - **help** : to see this message
+                 \n - **and more...**
+                  
+                 '''.format(personId)
+      
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"
@@ -292,6 +285,6 @@ def techxbot():
     
     data['markdown'] = msg 
     payload = json.dumps(data)
-    botSparkPOST(post_url,payload,headers)
-    return {'result' : '200 OK'}
+    r = botSparkPOST(post_url,payload,headers)
+    return { "response" : str(r.status_code) }
 
