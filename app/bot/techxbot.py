@@ -37,6 +37,24 @@ headers = {"Accept" : "application/json",
 #===== Disable Warnings in Security =====
 requests.packages.urllib3.disable_warnings()
 
+#=========== COmmon Functionality ===========#
+def botMessenger(msg,url=''):
+    '''DRY Messenger Function '''
+    bot = theBot() 
+    data = {}
+    data['roomId'] = bot_room
+    data['markdown'] = msg
+    if url != '':
+           data['file'] = url
+           
+    payload = json.dumps(data)
+    r = bot.SparkPOST(msg_url,payload,headers)
+    return str(r.status_code)
+
+
+
+
+
 
 #======= Web Endpoints for the Bot ==========#
 @get("/techx/v1/note/<msg>")
@@ -45,35 +63,21 @@ def techxbotPUT(msg):
     This URI is for push message to BOT_ROOM
     will send the message when react to an stimulus
     '''
-    bot = theBot() 
-    data = {}
-    data['roomId'] = bot_room
-    data['markdown'] = str(msg)
-    #data['file']= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzZTLid7KPsrcQ6nKGx3WpBky4OJUsJAN13tmFLRk_GQQb3_bs"
-    payload = json.dumps(data)
-    r = bot.SparkPOST(msg_url,payload,headers)
-
-    return { "response" : str(r.status_code) }
+    r = botMessenger(str(msg))
+    return { "response" : r }
 
 @post('/techx/v1/alert/')
 def txtReceiveAlarm():
     '''
     RECEIVING ALERTS FROM GRAFANA AND SENDIT TO Spark
     '''
-    bot = theBot()
     alert = request.json
-    msg = str(alert['message'])
-    url = str(alert['imageUrl'])
+    msg = str(alert['msg'])
+    url = str(alert['file'])
     
-    data = {}
-    
-    data['roomId'] = bot_room
-    data['markdown'] = msg
-    data['file'] = url
-    payload = json.dumps(data)
-    r = bot.SparkPOST(msg_url,payload,headers)
      
-    return {"response" : r.status_code }
+    r = botMessenger(msg,url)
+    return {"response" : r}
 
 
 
@@ -83,43 +87,36 @@ def txBotNotify():
     This URI is for push message to BOT_ROOM
     will send the message when react to an stimulus
     '''
-    bot = theBot()
     note = request.json  
    
     msg = str(note['msg'])
     url = str(note['file'])
-    data = {}
-    data['roomId'] = bot_room
-    data['markdown'] = msg
-    data['file']= url
-    payload = json.dumps(data)
-    r = bot.SparkPOST(msg_url,payload,headers)
+    r = botMessenger(msg,url)
 
-    return { "response" : str(r.status_code) }
+    return { "response" : r }
 
 @post("/techx/v1/ifttt/")
 def txbIFTTT():
     '''
     Integration of Amazon Alexa, Spark and IFTT via Webhook
     '''
-    data = {}
+    #data from IFTTT Webhook
     cmd = request.json
     action = str(cmd['cmd']).strip().lower()
     personId = str(cmd['personEmail']).strip().lower()
+    
+
     bot = theBot()
-    
-    
     resp =  bot.getOrders(personId,action)
-
-    data['roomId'] = bot_room
-    data['markdown'] = resp['msg']
-    if resp['file'] != '': 
-       data['file'] = resp['file']                                      
-
-    payload = json.dumps(data)
-    r = bot.SparkPOST(msg_url,payload,headers)
     
-    return { "response" : str(r.status_code) }
+    url = ''
+    msg = resp['msg']
+    if resp['file'] != '': 
+       url = resp['file']                                      
+
+    r = botMessenger(msg,url)
+    
+    return { "response" : r }
 
 
 @get("/techx/")
@@ -170,11 +167,6 @@ def techxbot():
         resp = bot.getOrders(personId,in_message)
         msg = resp['msg']
         url = resp['file'] 
-        
-        if url != '':
-           data['file'] = url
    
-        data['markdown'] = msg 
-        payload = json.dumps(data)
-        r = bot.SparkPOST(post_url,payload,headers)
-        return { "response" : str(r.status_code) }
+        r = botMessenger(msg,url)
+        return { "response" : r }
