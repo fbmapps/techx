@@ -1,6 +1,12 @@
 '''
 MODELS FILES TO HANDLE CONNECTION WITH EXTERNAL SERVICES
 
+
+VERSION : 0.3
+STATUS  = BETA
+DATE DEC 2017
+
+
 '''
 
 
@@ -340,4 +346,132 @@ class BitcoinEx():
        data = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
        return data
 
- 
+#================= BOT Class with all the Commands ============
+
+class theBot:
+
+    def __init__(self):
+        self.pri = PrimeAPI()
+        self.nba = SportStats()
+        self.btc = BitcoinEx()
+        self.cmx = CmxAPI()
+        
+    def getOrders(self,personId='',order='help'):
+    
+        in_message = order
+        personId = personId
+        msg = ''
+        url = ''
+
+        if 'ruthere' in in_message or 'ready' in in_message:
+           msg = "Yes <@personId:{0}>, I'm Here preparing myself to receive **orders** in the near future".format(personId)
+           url = 'https://d30y9cdsu7xlg0.cloudfront.net/png/1033931-200.png'
+        elif 'nbarank' in in_message:
+           stats = self.nba.teamStanding()
+           east_ttl = "\n**East Conference:** \n"
+           west_ttl = "\n**West Conference:** \n"
+           east_msg = ''
+           west_msg = ''
+           for stat in stats:
+               if stat['conf'] == 'East':
+                  east_msg = east_msg + stat['ranking'] + ". **" + stat['teamName'] + "** W:**" + stat['wins'] + "** L: **" + stat['loss'] + "** \n"
+               else:
+                  west_msg = west_msg + stat['ranking'] + ". **" + stat['teamName'] + "** W:**" + stat['wins'] + "** L: **" + stat['loss'] + "** \n"
+           msg = "**<@personId:{0}>  here is the latest NBA Ranking:** \n".format(personId) + east_ttl + east_msg + west_ttl + west_msg
+           url = "http://media.nola.com/hornets_impact/photo/10295491-small.jpg"   
+        elif 'nbagame' in in_message:
+           today_gm = "\n**Games for Today**\n"
+           today_match = '' 
+           games = self.nba.todayGames()
+           for game in games:
+               today_match = today_match + "- **" + game['vTeam'] + "** AT **" + game['hTeam'] + "**  *" + game['sTime'] +"* \n"
+           msg = today_gm + today_match
+        elif 'nbaresult' in in_message:
+           today_gm = "\n**Games Results for Today**\n"
+           today_match = '' 
+           games = self.nba.todayResults()
+           for game in games:
+               today_match = today_match + "- **" + game['vTeam'] + "** : **"+ game['vScore']  + "** AT **" + game['hTeam'] + "** :  **" + game['hScore'] +"** \n"
+           msg = today_gm + today_match
+        elif 'getbitcoin' in in_message:
+           rate = self.btc.getBTCRate()
+           msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
+        elif 'getprime' in in_message:
+           devs = self.pri.getDevices()
+           if int(devs['queryResponse']['@count']) == 0:
+              msg = "**Everything looks Good <@personId:{0}>.  All devices appears to be reachables now!!**".format(personId)
+              url = 'https://t6.rbxcdn.com/023c0a0a3aa7fb0629725f2ebe365f8f'
+           else:
+              msg = "It seems you need to go and Check!!! \n - **Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']))
+              url = "https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png"
+        elif 'getcmxcount' in in_message:
+           conx = self.cmx.getClientsCount()
+           msg = "**We have *{0}* Active connections seen in CMX**".format(str(conx['count'])) 
+        elif 'whereis' in in_message:
+           query = in_message.split('whereis ',1)[1]
+                      
+           if query[0].isdigit() and query[1].isdigit():
+              location = self.cmx.getClientByIP(query.strip())
+           else:
+              location = self.cmx.getClientByUserName(query.strip())           
+        
+           if not location:
+               msg = "**{0}** not found in CMX".format(query)       
+           else: 
+               for record in location:
+                   ipaddr = record['ipAddress'][0]
+                   macaddr = record['macAddress']
+                   ssid = record['ssId']
+                   username = record['userName']
+                   maps= record['mapInfo']['mapHierarchyString'].split('>')
+                   building = maps[0]
+                   level = maps[1]
+                   floor = maps[2]
+                   status = record['dot11Status']
+                   img =  record['mapInfo']['image']['imageName']
+                   x = record['mapCoordinate']['x']
+                   y = record['mapCoordinate']['y']
+                   lt= record['mapInfo']['floorDimension']['length']
+                   wt= record['mapInfo']['floorDimension']['width']
+                   resp=self.cmx.getMapImage(img,x,y,lt,wt,ipaddr)
+                   maplk = "[see on map here...](https://bot.xmplelab.com/static/img/{0}{1})".format(str(ipaddr).strip(),'.png')
+                   msg = """<@personId:{8}> This is what I've found:
+                          \n-  **{7}** is **{5}** on the ssid **{2}** 
+                          \n - Building **{3}** at **{4}** 
+                          \n-  IP: {0} 
+                          \n - username: **{1}** \n - {6}""".format(ipaddr,username,ssid,building,floor,status, maplk,query,personId)
+
+        elif 'help' in in_message:
+           msg = '''
+                 Hi <@personId:{0}>,  I'm a API helper. I'll look up info on PRIME, CMX, and any other location where my builders connect me at. To help you just call my name @techx.bot follow by any of this:\n
+                 \n - **getprime** : I'll give you the count of Reachables and Unreachables Devices 
+                 \n - **getcmxcount** : I'll show you the Actives connection from CMX
+                 \n - **whereis x.x.x.x or whereis username** : I'll contact CMX to see where this client is, and I will send you a link with a marked floorplan displaying the location
+                 \n - **help** : to see this message
+                 \n - **and more...**
+                  
+                 '''.format(personId)
+      
+        else: #CATCH ALL SWITCH
+           msg = "I do not understand the request. **Ask later!!**"
+           url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"    
+        
+        #Send Response to caller
+        return { "msg" : msg , "file" : url }
+
+    def SparkGET(self,url,headers):
+        '''
+        This will hear any message posted at the webhook
+        '''
+
+        r = requests.request("GET",url,headers=headers)
+        content = r.text
+        return content
+
+    def SparkPOST(self,url,payload,headers):
+        '''
+        This Function send messages to spark room where the bot is invoked
+        '''
+
+        content = requests.request("POST",url,data=payload,headers=headers)
+        return content
