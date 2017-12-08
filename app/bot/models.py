@@ -16,6 +16,7 @@ DATE DEC 2017
 import requests
 import json
 import os, sys, time, datetime
+import xml.etree.ElementTree as ET
 
 #===== Libraries for CMX Maps Processing ======
 import base64,re, uuid
@@ -56,13 +57,6 @@ class Notification(Base):
     record_created = Column(DateTime)
     
 
-
-
-
-
-
-
-
 #============ API CALLS Wrapper =================#
 class PrimeAPI():
     def checkStatus(self):
@@ -92,6 +86,35 @@ class PrimeAPI():
         url = "/webacs/api/v1/data/Devices.json?.full=true&.sort=ipAddress&reachability=UNREACHABLE"
         data = self.queryAPI(url)
 
+        return data
+
+
+class CnrAPI():
+    ''' Access to DNS and DHCP Info '''
+    def __init__(self):
+        self.user = str(os.environ['CNR_USER'])
+        self.passd = str(os.environ['CNR_PASW'])
+        self.apiURI = str(os.environ['CNR_URI'])
+
+    def queryAPI(self,url):
+        apiurl = self.apiURI + url
+        r = requests.get(apiurl,auth=(self.user,self.passd),verify=False)
+        result = r.text
+        return result
+    
+    def getDHCPStats(self):
+        url = "stats/DHCPServer" 
+        data = self.queryAPI(url)
+        return data
+
+    def getDNSStats(self):
+        url = "stats/DNSCachingServer"
+        data = self.queryAPI(url)
+        return data 
+
+    def getDHCPUse(self):
+        url="stats/DHCPServer?nrClass=DHCPTopUtilizedStats"
+        data = self.queryAPI(url)
         return data
 
 
@@ -355,6 +378,7 @@ class theBot:
         self.nba = SportStats()
         self.btc = BitcoinEx()
         self.cmx = CmxAPI()
+        self.cnr = CnrAPI()
         
     def getOrders(self,personId='',order='help'):
     
@@ -440,6 +464,45 @@ class theBot:
                           \n - Building **{3}** at **{4}** 
                           \n-  IP: {0} 
                           \n - username: **{1}** \n - {6}""".format(ipaddr,username,ssid,building,floor,status, maplk,query,personId)
+        elif 'getdhcp' in in_message:
+           data = self.cnr.getDHCPStats()
+           stats = ET.fromstring(data)
+           uptime = stats[4].text.strip()
+           dhcpdisc = stats[11].text.strip()
+           dhcpoffer = stats[13].text.strip()
+           dhcprel = stats[14].text.strip()
+           dhcpreq = stats[15].text.strip()
+           dhcpack = stats[9].text.strip()
+           msg = """ Hi <@personId:{0}>. This are the stats for DHCP Server:
+                     \n - Uptime        : **{1}**
+                     \n - DHCP Request  : **{2}**
+                     \n - DHCP Ack      : **{3}**
+                     \n - DHCP Offer    : **{4}**
+                     \n - DHCP Discover : **{5}**
+                 """.format(personId,uptime,dhcpreq,dhcpack,dhcpoffer,dhcpdisc) 
+        elif 'getdns' in in_message:
+           data = self.cnr.getDNSStats()
+           stats = ET.fromstring(data)
+           msg = """ <@personId:{0}> Data is Loading... """.format(personId)
+        elif 'getipuse' in in_message:
+           data = self.cnr.getDHCPUse()
+           ns = { "cnr" : "http://ws.cnr.cisco.com/xsd" } 
+           root = ET.fromstring(data)
+           msg = 'Hi <@personId:{0}>. Here is a summary of DHCP Scope usage: \n'.format(personId)
+           
+           for item in root.findall('cnr:list',ns):
+               for element in item.findall('cnr:DHCPScopeAggregationStatsItem',ns):
+                  name = element.find('cnr:name',ns)
+                  inUse = element.find('cnr:inUseAddresses',ns)
+                  usage = element.find('cnr:utilizedPct',ns)
+                  total = element.find('cnr:totalAddresses',ns)
+                  available =  int(total.text) - int(inUse.text)
+                  msg = msg + """\n - Scope : *{0} is at {1}. IPs used : {2} IP in scope {3} Availables :**{4}** """.format(name.text,
+                                                                                                                             usage.text,
+                                                                                                                             inUse.text,
+                                                                                                                             total.text,
+                                                                                                                             str(available))
+           
 
         elif 'help' in in_message:
            msg = '''
@@ -447,6 +510,8 @@ class theBot:
                  \n - **getprime** : I'll give you the count of Reachables and Unreachables Devices 
                  \n - **getcmxcount** : I'll show you the Actives connection from CMX
                  \n - **whereis x.x.x.x or whereis username** : I'll contact CMX to see where this client is, and I will send you a link with a marked floorplan displaying the location
+                 \n - **getdhcp** : I'll contact CNR API to see Stats info of DHCPServer
+                 \n - **getipuse** : Top stats of DHCP Scopes in use
                  \n - **help** : to see this message
                  \n - **and more...**
                   
