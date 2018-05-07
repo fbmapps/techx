@@ -2,21 +2,22 @@
 MODELS FILES TO HANDLE CONNECTION WITH EXTERNAL SERVICES
 
 
-VERSION : 0.3
+VERSION : 1.0
 STATUS  = BETA
 DATE DEC 2017
-
+REV MAY 2018
 
 '''
-
-
-
 
 
 import requests
 import json
 import os, sys, time, datetime
 import xml.etree.ElementTree as ET
+
+#===== Libraries for NetDevices Connectivity =====
+from netmiko import ConnectHandler
+from netmiko.ssh_exception import NetMikoTimeoutException
 
 #===== Libraries for CMX Maps Processing ======
 import base64,re, uuid
@@ -55,7 +56,7 @@ class Notification(Base):
     last_status_change = Column(DateTime)
     status_change_count = Column(Integer)
     record_created = Column(DateTime)
-    
+
 
 #============ API CALLS Wrapper =================#
 class PrimeAPI():
@@ -133,11 +134,14 @@ class CmxAPI():
     def queryAPI(self,url,content=False):
         apiurl = self.apiURI + url
         r = requests.get(apiurl,auth=(self.user,self.passd),verify=False)
-        if content == True:
-           data = r.content
-        else:
-           result = r.text
-           data = json.loads(result)
+        try:
+            if content == True:
+               data = r.content
+            else:
+               result = r.text
+               data = json.loads(result)
+        except ConnectionError as e:
+            data =  False
         return data
 
 
@@ -260,6 +264,161 @@ class CmxAPI():
         data = self.queryAPI(url,False)
         return data
 
+#============ DEVICE CONTROL ============#     
+
+class SwitchPort():
+    '''
+    Set Vlan Configuration using NetMiko Library
+    '''
+    def __init__(self):
+        self.user =  str(os.environ['NET_USER'])
+        self.passd = str(os.environ['NET_PASW'])
+        self.interface = ''
+        self.ipaddr = ''
+        global device
+        global current_config
+        
+
+                
+    def CheckConnectivity(self, ipaddr):
+        response = os.system("ping -c 2 " + ipaddr)
+        if response == 0:
+            return {'message' : 'Connection Ok' , 'status' : 200}
+        else:
+            return {'message' : 'Connection Failed!' , 'status' : 500}
+
+    def CheckInterfaceConfig(self,ipaddr,interface):
+        device = {
+            'device_type': 'cisco_ios',
+            'ip': ipaddr,
+            'username': self.user,
+            'password': self.passd,
+        }
+        try:
+            net_connect = ConnectHandler(**device)
+            net_connect.find_prompt()
+            output = str(net_connect.send_command("show run int gi {0}".format(interface)))
+            if 'Invalid input detected' in output:
+                output = str(net_connect.send_command("show run int te {0}".format(interface)))
+                if 'Invalid input detected' in output:
+                    status =  False
+                    response = {'code' : 500 , 'message' : 'Invalid Input Detected' , 'status' : status} 
+                    return response
+                else:
+                    self.interface = 'te' + interface
+                    self.ipaddr = ipaddr 
+                    status =  True
+                    response = {'message' : output.strip().splitlines(),'code' : 200, 'status' : status }
+                    return response
+            else:
+                self.interface = 'gi' + interface
+                self.ipaddr = ipaddr
+                status = True
+                response = {'message' : output.strip().splitlines() , 'code' : 200, 'status' : status }
+                return response
+            net_connect.disconnect() 
+        except ValueError:
+                return {'code' : 500 , 'message' : ValueError, 'status' : False }
+
+    def ChangeInterfaceConfig(self,ipaddr,vlan_name):
+        config_commands = []
+        vlan_id = {
+            'guest-wired':'980',
+            'noc-wired':'941',
+            'cisco-tv':'942',
+            'phones':'943',
+            'reg':'944',
+            'session-record':'945',
+            'staff-wired':'946',
+            'signage':'948',
+            'camera':'949',
+            'ap':'950',
+            'testing_center':'952',
+            'devnet':'953',
+            'wisp':'954',
+            'printer':'959',
+            'trunk':''
+        }
+
+        base_config = [
+            'switchport',
+            'switchport mode access',
+            'switchport port-security maximum 10',
+            'switchport port-security',
+            'switchport port-security aging time 10',
+            'load-interval 30',
+            'ipv6 nd raguard',
+            'ipv6 dhcp guard',
+            'udld port aggressive',
+            'storm-control broadcast level pps 100',
+            'storm-control multicast level pps 2k',
+            'spanning-tree link-type point-to-point',
+            'spanning-tree guard root',
+            'no shut'
+        ]
+
+        trunk_config = [
+            'switchport',
+            'switchp mode trunk',
+            'switchp non',
+            'load-interval 30',
+            'udld port aggressive',
+            'spanning-tree link-type point-to-point',
+            'spanning-tree guard loop',
+            'no shut'
+        ]
+
+        
+        if vlan_name == 'trunk':
+            config_commands = trunk_config
+        else:
+            config_commands = base_config
+            config_commands.insert(2, 'switchport access vlan ' + vlan_id[vlan_name])
+
+        config_commands.insert(0,'default int  '+ self.interface)
+        config_commands.insert(1,'interface '+ self.interface) 
+
+        results = self.ExecuteCommand(config_commands)
+
+        return results   
+
+    def ChangeInterfaceStatus(self):
+        '''
+        This action brings up a port
+        '''
+        config_commands = []
+        base_config = [
+            'no shut'
+        ]
+        config_commands = base_config
+        config_commands.insert(0,'interface '+ self.interface) 
+        results = self.ExecuteCommand(config_commands)
+        return results  
+            
+    def ExecuteCommand(self,config_commands):
+        '''
+        Receive a Command Set and Execute it 
+        '''
+
+        device = {
+            'device_type': 'cisco_ios',
+            'ip': self.ipaddr,
+            'username': self.user,
+            'password': self.passd,
+        }
+        try: 
+            net_connect = ConnectHandler(**device)
+            time.sleep(0.5)
+            net_connect.send_config_set(config_commands)
+            int_config = str(net_connect.send_command("show run int {}".format(self.interface)))
+            net_connect.disconnect()
+            return {'status' : 200 , 'message' : int_config.strip().splitlines()}
+
+        except ValueError:
+            return {'message' : 'Configuration Unsucessfull', 'status': 500}  
+
+
+
     
 
 #============ HIDDEN GEMS ==============#
@@ -369,20 +528,54 @@ class BitcoinEx():
        data = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
        return data
 
+
+
+class MyInfoAPI:
+
+    def __init__(self):
+       return
+
+
+    def aboutMe(self):
+
+       data = {}
+
+       data = {'cmx_user' : str(os.environ['CMX_USER']),
+               'prime_user' : str(os.environ['PRM_USER']),
+               'cnr_user' : str(os.environ['CNR_USER']),
+               'my_email' : str(os.environ['BOT_EMAIL']),
+               'prime_url' : str(os.environ['PRM_URL']),
+               'cmx_url' : str(os.environ['CMX_URI']),
+               'cnr_url' : str(os.environ['CNR_URI']) 
+              } 
+
+       return data
+
+
+
 #================= BOT Class with all the Commands ============
 
 class theBot:
 
     def __init__(self):
+
         self.pri = PrimeAPI()
         self.nba = SportStats()
         self.btc = BitcoinEx()
         self.cmx = CmxAPI()
         self.cnr = CnrAPI()
+        self.inf = MyInfoAPI()
+        self.svl = SwitchPort()
+
         
     def getOrders(self,personId='',order='help'):
+        '''
+        Receive the intents of user and execute the actions associated to the intent
+        Actions are Objects which API calls to respond back to bot
+
+        '''
     
-        in_message = order
+        in_message = order #Intent
         personId = personId
         msg = ''
         url = ''
@@ -502,8 +695,78 @@ class theBot:
                                                                                                                              inUse.text,
                                                                                                                              total.text,
                                                                                                                              str(available))
-           
+        elif 'changevlan' in in_message:
+            #Data Parsing
+            ip = ''.join(re.findall('\w{1,3}\.\w{1,3}\.\w{1,3}\.\w{1,3}',in_message))
+            interface1 = ''.join(re.findall(r'\w{1,3}/\w{1,3}/\w{1,3}',in_message))
+            interface2=  ''.join(re.findall(r'\w{1,3}/\w{1,3}',in_message))
+            if not interface1:
+                interface = interface2
+            else: 
+                interface = interface1
+            vlan = ''.join(re.findall(r'\bguest-wired\b|\bnoc-wired\b|\bcisco-tv\b|\bphones\b|\breg\b|\bsession-record\b|\bstaff-wired\b|\bsignage\b|\bcamera\b|\bap\b|\bdevnet\b|\bwisp\b|\bwos\b|\btesting_center\b|\bprinter\b|\btrunk\b',msg))
+            device_status = self.svl.CheckConnectivity(ip)
+            interface_status,current_config = self.svl.CheckInterfaceConfig(ip,interface)
+            config = '\n**********Current Config**********\n\n' + current_config['message']
+            if device_status['status'] == 200 and interface_status is True:
+                final_config = self.svl.ChangeInterfaceConfig(ip,interface,vlan)
+                msg = '\n**********Final Config**********\n\n'
+                conf = '```' #MarkDown for Code Format
+                for line in final_config['message']:
+                    conf = conf + ' ' + line + '\n'
+                msg = msg + conf + '```'  
+            else:
+                msg = current_config['message']
 
+        elif 'noshut' in in_message:
+            #Data Parsing
+            ip = ''.join(re.findall('\w{1,3}\.\w{1,3}\.\w{1,3}\.\w{1,3}',in_message))
+            interface = ''.join(re.findall(r'\w{1,3}/\w{1,3}/\w{1,3}',in_message))
+            device_status = self.svl.CheckConnectivity(ip)
+            ifc_check = self.svl.CheckInterfaceConfig(ip,interface)
+            if device_status['status'] == 200 and ifc_check['status'] is True:
+                final_config = self.svl.ChangeInterfaceStatus()
+                msg = '\n**********Final Config**********\n\n'
+                conf = '```' #MarkDown for Code Format
+                for line in final_config['message']:
+                    conf = conf + ' ' + line + '\n'
+                msg = msg + conf + '```'
+       
+            else:
+                msg = ifc_check['message']           
+        
+
+        elif 'showint' in in_message:
+            #Data Parsing
+            ip = ''.join(re.findall('\w{1,3}\.\w{1,3}\.\w{1,3}\.\w{1,3}',in_message))
+            interface = ''.join(re.findall(r'\w{1,3}/\w{1,3}/\w{1,3}',in_message))
+            device_status = self.svl.CheckConnectivity(ip)
+            ifc_check = self.svl.CheckInterfaceConfig(ip,interface)
+            if device_status['status'] == 200 and ifc_check['status'] is True:
+                msg = '\n********** Current Config **********\n\n'
+                conf = '```'
+                for line in ifc_check['message']:
+                    conf = conf + ' ' + line + '\n'
+                msg = msg + conf + '```'
+
+            else:
+                msg = ifc_check['message']
+
+        elif 'showsvc' in in_message:
+           about = self.inf.aboutMe()
+           msg = ''' Hi <@personId:{0}>. This is a summary of the services an user id I'm using to connect \n'''.format(personId) 
+           msg = msg + ''' 
+                 \n - PRIME : UID **{0}** | API URI : **{1}**
+                 \n - CMX :   UID **{2}** | API URI : **{3}**
+                 \n - CNR :   UID **{4}** | API URI : **{5}**
+                
+  
+           '''.format(about['prime_user'],
+                      about['prime_url'],
+                      about['cmx_user'],
+                      about['cmx_url'],
+                      about['cnr_user'],
+                      about['cnr_url'])        
         elif 'help' in in_message:
            msg = '''
                  Hi <@personId:{0}>,  I'm a API helper. I'll look up info on PRIME, CMX, and any other location where my builders connect me at. To help you just call my name @techx.bot follow by any of this:\n
@@ -512,11 +775,15 @@ class theBot:
                  \n - **whereis x.x.x.x or whereis username** : I'll contact CMX to see where this client is, and I will send you a link with a marked floorplan displaying the location
                  \n - **getdhcp** : I'll contact CNR API to see Stats info of DHCPServer
                  \n - **getipuse** : Top stats of DHCP Scopes in use
+                 \n - **changevlan switch_ip port vlan name** :  Change Vlan Configuration
+                 \n - **noshut switch_ip port** :  Brings Switch Port UP 
+                 \n - **showint switch_ip port** : Shows Interface Configuration 
+                 \n - **showsvc** :  Info About Me and the services I'm using
                  \n - **help** : to see this message
                  \n - **and more...**
                   
                  '''.format(personId)
-      
+        
         else: #CATCH ALL SWITCH
            msg = "I do not understand the request. **Ask later!!**"
            url = "https://s-media-cache-ak0.pinimg.com/originals/09/37/fd/0937fd67d480736fa7a623944bd89f4b.jpg"    

@@ -37,7 +37,7 @@ headers = {"Accept" : "application/json",
 #===== Disable Warnings in Security =====
 requests.packages.urllib3.disable_warnings()
 
-#=========== COmmon Functionality ===========#
+#=========== Common Functionality ===========#
 def botMessenger(msg,url=''):
     '''DRY Messenger Function '''
     bot = theBot() 
@@ -79,7 +79,19 @@ def txtReceiveAlarm():
     r = botMessenger(msg,url)
     return {"response" : r}
 
+@post('/techx/v2/elk/')
+def txtElkNotify():
+    '''
+    This URI is for receive data from logstash parser
+    '''
 
+    note = request.json
+
+    msg = str(note['msg'])
+    r = ''    
+    print(msg)
+    return {'response' : r }
+    
 
 @post("/techx/v1/note/")
 def txBotNotify():
