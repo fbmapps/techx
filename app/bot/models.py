@@ -8,12 +8,11 @@ DATE DEC 2017
 REV MAY 2018
 
 '''
-
-
 import requests
 import json
-import os, sys, time, datetime
+import os, sys, time, datetime,random
 import xml.etree.ElementTree as ET
+
 
 #===== Libraries for NetDevices Connectivity =====
 from netmiko import ConnectHandler
@@ -34,10 +33,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 
 #====== DISABLING Security Warnings=======
-#from requests.packages.urllib3.exceptions import InsecureRequestWarning
-#requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-#import urllib3
-#urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 #====== CiscoSparkAPI call ========================
 from ciscosparkapi import CiscoSparkAPI
@@ -47,7 +46,10 @@ from ciscosparkapi import CiscoSparkAPI
 Base = declarative_base()
 #db = create_engine('sqlite:///techxdb.db') 
 
+#============ Logging Configuration ======================#
+import logging
 
+models_logger = logging.getLogger('cliveBot.Models')
 
 __author__ = "Freddy Bello"
 __author_email__ = "frbello@cisco.com"
@@ -81,7 +83,9 @@ class PrimeAPI():
     def __init__(self):
         self.user = str(os.environ['PRM_USER'])                #API USER
         self.passd = str(os.environ['PRM_PASW'])               #API PASS
-        self.apiURI = str(os.environ['PRM_URL'])               #PRIME SERVER URL
+        self.apiURI = str(os.environ['PRM_URL'])               
+        self.logger = logging.getLogger('cliveBot.PrimeAPI')
+        self.logger.info('Prime API in use')
 
 
     def queryAPI(self,url):
@@ -128,7 +132,7 @@ class PrimeAPI():
             url = link + '.json'
             response = self.queryAPI(url)
             client_connection_type = response['queryResponse']['entity'][0]['clientDetailsDTO']['connectionType']
-
+            mapw=''
             if client_connection_type.lower() == 'wired':
                client_interface = response['queryResponse']['entity'][0]['clientDetailsDTO']['clientInterface']
                device_ip_address = response['queryResponse']['entity'][0]["clientDetailsDTO"]["deviceIpAddress"]["address"]
@@ -141,12 +145,7 @@ class PrimeAPI():
                client_vlanid = response['queryResponse']['entity'][0]["clientDetailsDTO"]["vlan"]
                client_vendor = response['queryResponse']['entity'][0]["clientDetailsDTO"]["vendor"]
 
-               msg = """\n  **{}** has a mac-address of **{}** 
-                        \n - Is of type **{}** from **{}**. 
-                        \n - It is connected to switch **{}** ({}) 
-                        \n - on port **{}** 
-                        \n - VLAN **{}** (**{}**).
-                        \n - Current status is **{}**""".format(client_ip,
+               msg = """\n  **{}** has a mac-address of **{}**  \nIs of type **{}** from **{}**.  \nIt is connected to switch **{}** ({})  \non port **{}**  \nVLAN **{}** (**{}**).  \nCurrent status is **{}**""".format(client_ip,
                                                                 client_mac_address,
                                                                 client_device_type, 
                                                                 client_vendor,
@@ -157,7 +156,7 @@ class PrimeAPI():
                                                                 client_vlanid,
                                                                 client_current_status)
                user_location.append(msg)
-               mapw =[]
+               #mapw =''
                #return {"clt_conn_type" : client_connection_type, "location" : user_location, "status_code" : 200,"map" : mapw}
             
             else:
@@ -176,12 +175,7 @@ class PrimeAPI():
                client_vendor = response['queryResponse']['entity'][0]["clientDetailsDTO"]["vendor"]
                client_vlanid = response['queryResponse']['entity'][0]["clientDetailsDTO"]["vlan"]
 
-               msg = """\n  **{}** has a mac-address of {} 
-                        \n - Is of type **{}** from **{}**. 
-                        \n - It is connected to AP **{}** (**{}**) 
-                        \n - on SSID **{}** 
-                        \n - (VLAN **{}**). 
-                        \n - Current status is **{}**""".format(client_ip,
+               msg = """\n**{}** has a mac-address of {}  \nIs of type **{}** from **{}**.  \nIt is connected to AP **{}** (**{}**)  \non SSID **{}**  \n(VLAN **{}**).  \nCurrent status is **{}**""".format(client_ip,
                                                                 client_mac_address,
                                                                 client_device_type,
                                                                 client_vendor,
@@ -192,10 +186,14 @@ class PrimeAPI():
                                                                 client_current_status)
                  
                user_location.append(msg)
-               mapw=[] 
-
+               if client_current_status == "ASSOCIATED":
+                   cx = CmxAPI()
+                   cxmsg,mapw = cx.getLocation(client_ip)
+               else:
+                   mapw = 'https://cdn4.iconfinder.com/data/icons/online-store/300/404-512.png' 
                 
-        return {"clt_conn_type" : client_connection_type, "location" : user_location, "status_code" : 200, "map" : mapw}
+                
+        return{"clt_conn_type" : client_connection_type, "location" : user_location, "status_code" : 200, "map" : mapw}
 
 
 
@@ -209,6 +207,8 @@ class CnrAPI():
         self.apiURI = str(os.environ['CNR_URI'])
         self.lookupKey = '01:06:'
         self.headers = {'accept': "application/json",'content-type': "application/json",'cache-control': "no-cache"}
+        self.logger = logging.getLogger('cliveBot.CnrAPI')
+        self.logger.info('CNR API in use')
 
 
     def queryAPI(self,url):
@@ -239,7 +239,9 @@ class CnrAPI():
             r = requests.post(apiurl,headers=self.headers,auth=(self.user,self.passd),data=json.dumps(payload),verify=False)
             result = r.status_code
             data = result
+            self.logger.info('CNR API Call executed sucessfully')
         except ConnectionError as e:
+            self.logger.error('CNR API Call fails')
             data = 500
 
         return data
@@ -252,12 +254,14 @@ class CnrAPI():
         
         try:
             response = self.post(uri,payload)
+            self.logger.info('Lease reservation executed sucessfully')
             #if response == 201:
                 #Sync with the ALternate CNR
                 #url = "https://10.0.114.5:8443/web-services/rest/resource/CCMFailoverPair/Failover"
                 #payload={"action" : "sync","mode" : "update","direction" : "fromMain"}
                 #sync_response = requests.request("PUT", url=url, headers=self.headers, auth=(self.user ,self.passw), data=payload,verify=False)
         except ConnectionError as e:
+            self.logger.error('Lease reservation fails')
             response = 500   
         
         return response
@@ -273,7 +277,9 @@ class CnrAPI():
             response = requests.get(url,headers=self.headers,auth=(self.user,self.passd),verify=False)
             if response.status_code == 200:
                 data = json.loads(response.text)
+                self.logger.info('Lease info retrieved sucessfully')
         except ConnectionError as e:
+            self.logger.error('Lease reservation info not found')
             data = {"error": e, "status_code" : 500}
         
         return data
@@ -283,11 +289,13 @@ class CnrAPI():
 
 
         '''
-        url = self.apiURI+'resource/Reservation/'+ip
+        url = self.apiURI+'resource/Reservation/'+ipaddr
         try:
             response = requests.delete(url,headers=self.headers,auth=(self.user,self.passd),verify=False)
             data = response.status_code
+            self.logger.info('Lease info deleted sucessfully')
         except ConnectionError as e:
+            self.logger.error('Lease delete action fails')
             data = 500
                 
         return data
@@ -305,9 +313,63 @@ class CmxAPI():
         self.user =  str(os.environ['CMX_USER'])
         self.passd = str(os.environ['CMX_PASW'])
         self.apiURI = str(os.environ['CMX_URI'])
-        self.PATH = str(os.environ['CMX_MAP'])        
+        self.PATH = str(os.environ['CMX_MAP'])
+        self.logger = logging.getLogger('cliveBot.CmxAPI')
+        self.logger.info('CMX API in use')        
 
+    def getLocation(self,query):
+        '''
+        Encapsulate Mapper functionality on a single function
+        '''
+        url =''
+        ip = ''.join(re.findall('\w{1,3}\.\w{1,3}\.\w{1,3}\.\w{1,3}',query))
+        ipv6=''
+        if not ip:
+            #a Username has been used
+            records = self.getClientByUserName(query.strip())
+            for record in records:
+                #print(record['ipAddress'][0])
+                ip = record['ipAddress'][0]
+                if len(record['ipAddress']) > 1:
+                    ipv6 = record['ipAddress'][1]
+                location = self.getClientByIP(ip)
+                
+        else:
+            location =self.getClientByIP(ip)
+            ipv6 = self.getClientIPV6(ip)
 
+        if not location:
+            #No records has been found
+            msg = "**{0}** not found in CMX".format(query)
+            self.logger.info('CMX Record not found for query {}'.format(query))
+        else:
+            for record in location:
+                if not record['ipAddress']:
+                    msg = "IP Address not found in CMX".format(query)
+                    url=''
+                    #return msg,url                   
+                else:   
+                    ipaddr = record['ipAddress'][0]
+                    macaddr = record['macAddress']
+                    ssid = record['ssId']
+                    username = record['userName']
+                    maps= record['mapInfo']['mapHierarchyString'].split('>')
+                    building = maps[0]
+                    level = maps[1]
+                    floor = maps[2]
+                    status = record['dot11Status']
+                    img =  record['mapInfo']['image']['imageName']
+                    x = record['mapCoordinate']['x']
+                    y = record['mapCoordinate']['y']
+                    lt= record['mapInfo']['floorDimension']['length']
+                    wt= record['mapInfo']['floorDimension']['width']
+                    resp=self.getMapImage(img,x,y,lt,wt,ipaddr)
+                    maplk = ""
+                    msg = """This is what I've found  \n**{7}** is **{5}** on the ssid **{2}**  \nBuilding **{3}** at **{4}**  \nIP: {0}  \nIPv6: {8}  \nusername: **{1}**""".format(ipaddr,username,ssid,building,floor,status, maplk,query,ipv6)
+                    url = "/var/www/html/static/img/{0}{1}".format(str(ipaddr).strip(),'.png')
+                    self.logger.info('CMX info found for query {}'.format(query))
+        
+                    return msg,url 
 
     def queryAPI(self,url,content=False):
         apiurl = self.apiURI + url
@@ -318,7 +380,9 @@ class CmxAPI():
             else:
                result = r.text
                data = json.loads(result)
+            self.logger.info('CMX api query executed sucessfully')
         except ConnectionError as e:
+            self.logger.error('CMX api query fails')
             data =  False
         return data
     
@@ -444,9 +508,19 @@ class CmxAPI():
         return data
 
     def getClientByUserName(self,username):
-        url = "api/location/v2/clients?username=" + str(username)
+        url = "api/location/v3/clients?username=" + str(username)
         data = self.queryAPI(url,False)
         return data
+    
+    def getClientIPV6(self,ipaddr):
+        url = "api/location/v3/clients?ipAddress=" + str(ipaddr)
+        data = self.queryAPI(url,False)
+        if len(data[0]['ipAddress']) > 1:
+            found_ip = data[0]['ipAddress'][1] 
+        return found_ip
+
+
+
 
 #============ DEVICE CONTROL ============#     
 
@@ -457,12 +531,35 @@ class SwitchPort():
     def __init__(self):
         self.user =  str(os.environ['NET_USER'])
         self.passd = str(os.environ['NET_PASW'])
+        self.logger = logging.getLogger('cliveBot.DeviceControl')
+        self.logger.info('Device Control has been requested')
         self.interface = ''
         self.ipaddr = ''
         global device
         global current_config
-        
-
+        self.vlans =['trunk',
+            'nocwired',
+            'ciscotv',
+            'voice',
+            'registration',
+            'sesscap',
+            'signage',
+            'camera',
+            'ap',
+            'speaker',
+            'devnet',
+            'wisp',
+            'nocpublic',
+            'regpublic',
+            'occcpublic',
+            'labspublic',
+            'ciscotvpublic',
+            'wospublic2',
+            'wospublic',
+            'wos550 to wos586',
+            'hyattpublic'] 
+       
+         
                 
     def CheckConnectivity(self, ipaddr):
         response = os.system("ping -c 2 " + ipaddr)
@@ -501,7 +598,9 @@ class SwitchPort():
                 response = {'message' : output.strip().splitlines() , 'code' : 200, 'status' : status }
                 return response
             net_connect.disconnect() 
+            slef.logger.info('Device Config Checked sucessfully')
         except ValueError:
+                self.logger.error('Device Configuration Check fails')
                 return {'code' : 500 , 'message' : ValueError, 'status' : False }
 
     def ChangeInterfaceConfig(self,vlan_name):
@@ -544,7 +643,7 @@ class SwitchPort():
 	    'wos564':	'564',
 	    'wos565':	'565',
 	    'wos566':	'566',
-            'wos570':  '570',
+            'wos570':   '570',
 	    'wos571':	'571',
 	    'wos572':	'572',
 	    'wos573':	'573',
@@ -564,6 +663,7 @@ class SwitchPort():
        } 
 
         base_config = [
+            'description Configured by Sparkbot',
             'switchport',
             'switchport mode access',
             'switchport port-security maximum 10',
@@ -581,6 +681,7 @@ class SwitchPort():
         ]
 
         trunk_config = [
+            'description Configured by Sparkbot',
             'switchport',
             'switchp mode trunk',
             'switchp non',
@@ -600,7 +701,8 @@ class SwitchPort():
 
         config_commands.insert(0,'default int  '+ self.interface)
         config_commands.insert(1,'interface '+ self.interface) 
-
+        
+        self.logger.info('A Vlan Change has been requested') 
         results = self.ExecuteCommand(config_commands)
 
         return results   
@@ -614,10 +716,18 @@ class SwitchPort():
             'no shut'
         ]
         config_commands = base_config
-        config_commands.insert(0,'interface '+ self.interface) 
+        config_commands.insert(0,'interface '+ self.interface)
+        self.logger.info('A status change has been requested for port {}'.format(self.interface)) 
         results = self.ExecuteCommand(config_commands)
         return results  
-            
+    
+
+    def ShowVlans(self):
+        '''Return the Vlan List supported'''
+      
+        return self.vlans
+
+         
     def ExecuteCommand(self,config_commands):
         '''
         Receive a Command Set and Execute it 
@@ -635,9 +745,11 @@ class SwitchPort():
             net_connect.send_config_set(config_commands)
             int_config = str(net_connect.send_command("show run int {}".format(self.interface)))
             net_connect.disconnect()
+            self.logger.info('Device commands executed sucessfully in {}'.format(str(self.ipaddr)))
             return {'status' : 200 , 'message' : int_config.strip().splitlines()}
 
         except ValueError:
+            slef.logger.error('Command execution fails in device {}'.format(self.ipaddr))
             return {'message' : 'Configuration Unsucessfull', 'status': 500}  
 
 
@@ -768,7 +880,28 @@ class MacVendor():
         data = requests.get(url,verify=False)
         return data.text
      
+class ShowerThought:
+    '''Get ShowerThoughts from reddit
+
+
+    '''
+    def __init__(self):
+        self.URI = 'https://www.reddit.com/r/showerthoughts/hot.json'
+        self.randompost = random.randint(1,20)
+
+    def getShowerThought(self):
+        '''
+        Get Random ShowerThoughts   
+        '''
+        resp = requests.get(self.URI,headers={"User-agent":"Showerthoughtbot 0.1"},verify=False)
+        thought = json.loads(resp.text)
         
+        return thought['data']['children'][self.randompost]['data']['title']
+
+
+        
+
+             
 
 
 class MyInfoAPI:
@@ -807,13 +940,13 @@ class theBot:
         self.cnr = CnrAPI()
         self.inf = MyInfoAPI()
         self.svl = SwitchPort()
-        self.clive =  CiscoSparkAPI(access_token='OTUwNWQzNGYtNjgwNi00OWE5LTlmNDAtMjZlMTA1ZTA2ZGU2NDlhZmMzNDYtMzI1')
-        self.vendor = MacVendor()        
+        self.clive =  CiscoSparkAPI()
+        self.vendor = MacVendor()
+        self.shw = ShowerThought()        
 
-        #OTUwNWQzNGYtNjgwNi00OWE5LTlmNDAtMjZlMTA1ZTA2ZGU2NDlhZmMzNDYtMzI1
 
         
-    def getOrders(self,personId='',order='help',roomId=''):
+    def getOrders(self,personId='',order='help',roomId='',*args,**kwargs):
         '''
         Receive the intents of user and execute the actions associated to the intent
         Actions are Objects which API calls to respond back to bot
@@ -869,48 +1002,24 @@ class theBot:
               msg = "**Everything looks Good <@personId:{0}>.  All devices appears to be reachables now!!**".format(personId)
               url = 'https://t6.rbxcdn.com/023c0a0a3aa7fb0629725f2ebe365f8f'
            else:
-              msg = "It seems you need to go and Check!!! \n - **Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']))
+              msg = "It seems you need to go and Check!!! \n**Right now we have {0} devices Unreachables!!**".format(str(devs['queryResponse']['@count']))
               url = "https://www.shareicon.net/data/128x128/2016/08/18/815448_warning_512x512.png"
         elif 'getxcount' in in_message:
            conx = self.cmx.getClientsCount()
            msg = "**We have *{0}* Active connections seen in CMX**".format(str(conx['count'])) 
         elif 'whereis' in in_message:
-           query = in_message.split('whereis ',1)[1]
-                      
-           if query[0].isdigit() and query[1].isdigit():
-              location = self.cmx.getClientByIP(query.strip())
-           else:
-              location = self.cmx.getClientByUserName(query.strip())           
-        
-           if not location:
-               msg = "**{0}** not found in CMX".format(query)       
+           query = in_message.split('whereis ',1)[1] 
+           files = []
+           msg,url = self.cmx.getLocation(query.strip())
+           if not url:
+              self.clive.messages.create(roomId,markdown=msg)
            else: 
-               for record in location:
-                   ipaddr = record['ipAddress'][0]
-                   macaddr = record['macAddress']
-                   ssid = record['ssId']
-                   username = record['userName']
-                   maps= record['mapInfo']['mapHierarchyString'].split('>')
-                   building = maps[0]
-                   level = maps[1]
-                   floor = maps[2]
-                   status = record['dot11Status']
-                   img =  record['mapInfo']['image']['imageName']
-                   x = record['mapCoordinate']['x']
-                   y = record['mapCoordinate']['y']
-                   lt= record['mapInfo']['floorDimension']['length']
-                   wt= record['mapInfo']['floorDimension']['width']
-                   resp=self.cmx.getMapImage(img,x,y,lt,wt,ipaddr)
-                   maplk = "[see on map here...](https://bot.xmplelab.com/static/img/{0}{1})".format(str(ipaddr).strip(),'.png')
-                   msg = """<@personId:{8}> This is what I've found:
-                          \n-  **{7}** is **{5}** on the ssid **{2}** 
-                          \n - Building **{3}** at **{4}** 
-                          \n-  IP: {0} 
-                          \n - username: **{1}**""".format(ipaddr,username,ssid,building,floor,status, maplk,query,personId)
-                   url = ["/var/www/html/static/img/{0}{1}".format(str(ipaddr).strip(),'.png')]
-                   self.clive.messages.create(roomId,markdown=msg,files=url)
-                   msg = "**Job Done!!!**"
-                   #url = "http://www.computerhistory.org/ciscoarchive/_media/img/chm-cisco-systems.jpg"
+              files.append(url)
+              self.clive.messages.create(roomId,markdown=msg,files=files)
+           
+           msg = ""
+           url = ''
+
         elif 'getdhcp' in in_message:
            data = self.cnr.getDHCPStats()
            stats = ET.fromstring(data)
@@ -958,7 +1067,7 @@ class theBot:
                 interface = interface2
             else: 
                 interface = interface1
-            vlan = ''.join(re.findall(r'\bnocwired\b|\bciscotv\b|\bvoice\b|\bregistration\b|\bsesscap\b|\bsignage\b|\bcamera\b|\bap\b|\bspeaker\b|\bdevnet\b|\bwisps\b|\bnocpublic\b|\bregpublic\b|\bocccpublic\b|\blabspublic\b|\bciscotvpublic\b|\bhyattpublic\b|\bwos\w{1,7}\b',in_message))
+            vlan = ''.join(re.findall(r'\bnocwired\b|\bciscotv\b|\bvoice\b|\bregistration\b|\bsesscap\b|\bsignage\b|\bcamera\b|\bap\b|\bspeaker\b|\bdevnet\b|\bwisp\b|\bnocpublic\b|\bregpublic\b|\bocccpublic\b|\blabspublic\b|\bciscotvpublic\b|\bhyattpublic\b|\bwos\w{1,7}\b',in_message))
             device_status = self.svl.CheckConnectivity(ip)
             ifc_check = self.svl.CheckInterfaceConfig(ip,interface)
             #config = '\n**********Current Config**********\n\n' + current_config['message']
@@ -1005,7 +1114,25 @@ class theBot:
 
             else:
                 msg = ifc_check['message']
-       
+
+        elif 'showvlan' in in_message:
+            vlan_list = self.svl.ShowVlans()
+            msg=''
+            url=''
+            if not vlan_list:
+                msg = "**No Vlan List configured. Check Data**"
+            else:
+                for vlan in vlan_list:        
+                    msg= msg + '  \n`{}`'.format(str(vlan))
+            
+            #self.clive.messages.create(roomId,markdown=msg)   
+            
+        elif 'getshowerthought' in in_message:
+            th = self.shw.getShowerThought()
+            msg=th.strip()
+            url=''
+
+
         elif 'find' in in_message:
             #Data Parser
             query = in_message.split('find ',)[1]
@@ -1024,24 +1151,34 @@ class theBot:
 
             #print(param)
             result = self.pri.find(param)
+            files=[]
             if result['status_code']==404:
                msg = '**{0}** Not Found'.format(query.strip())
-               self.clive.messages.create(roomId,markdown=msg)
+               img = 'https://cdn.iconscout.com/public/images/icon/premium/png-512/error-page-not-found-bug-maintenance-397f875a814e006f-512x512.png'
+               files.append(img) 
+               self.clive.messages.create(roomId,markdown=msg,files=files)
             else:
                dev_type = result['clt_conn_type']
                data = result['location']
                if dev_type.lower()=='wired':
                   for each in data:
-                     msg = data[0]
+                     msg = each
                      self.clive.messages.create(roomId,markdown=msg)
                else:
-                  #Wireles
+                  #Wireless
+                  files=[]
+                  mapw = result['map']
+                  files.append(mapw)
                   for each in data:
-                     msg = data[0]
-                     self.clive.messages.create(roomId,markdown=msg)
+                     msg = each 
+                     if not files:
+                        self.clive.messages.create(roomId,markdown=msg)
+                     else:
+                        self.clive.messages.create(roomId,markdown=msg,files=files)
             
-            msg = '**Job Done!!!**'
-        
+            #msg = '**Job Done!!!**'
+            msg='.'
+            
        
         elif 'reserve' in in_message:
             #Data Parser
@@ -1051,16 +1188,16 @@ class theBot:
             #Case 1: A new Lease Reserve for unasigned IP
             #Must provide both IP and Mac
             if mac != '' and ip != '':
-                vendor = self.vendor.getMacVendor(mac)
-                msg = "A **new** lease reservation will be created for mac {0}. It seems a device from {2}  . The IP **{1}** will be reserved for this host".format(mac,ip,vendor)
+                #vendor = self.vendor.getMacVendor(mac)
+                msg = "A **new** lease reservation will be created for mac {0}. The IP **{1}** will be reserved for this host".format(mac,ip)
                 self.clive.messages.create(roomId,markdown=msg)
                 response = self.cnr.reserveLease(ip,mac)
                 if response == 201:
-                    msg = "A lease reservation was created for mac **{0}** from {2}. The IP **{1}** is reserved now for that mac!".format(mac,ip,vendor)                 
+                    msg = "A lease reservation was created for mac **{0}**. The IP **{1}** is reserved now for that mac!".format(mac,ip)                 
                 else:
                     msg = "A lease reservation for mac **{0}** fails. The IP **{1}** is not reserved, please check your info and try again".format(mac,ip) 
                 self.clive.messages.create(roomId,markdown=msg) 
-                    
+                msg='.'    
             #Case 2: An IP is assigned by DHCP but user wants it reserved for that host
             #must provide IP
             elif not mac and ip !='':
@@ -1070,14 +1207,14 @@ class theBot:
                 check_lease = self.cnr.getLeaseInfo(ip)
                 mac = check_lease['clientBinaryClientId']
                 mac = mac[3:]
-                vendor = self.vendor.getMacVendor(mac)
+                #vendor = self.vendor.getMacVendor(mac)
                 response = self.cnr.reserveLease(ip,mac)
                 if response == 201:
-                    msg = "A lease reservation was created for mac **{0}** (it looks like as a device from **{2}**). The IP **{1}** is reserved now for that mac!".format(mac,ip,vendor)                 
+                    msg = "A lease reservation was created for mac **{0}**. The IP **{1}** is reserved now for that mac!".format(mac,ip)                 
                 else:
-                    msg = "A lease reservation for mac **{0}** fails. It looks like as a device from **{2}**. The IP **{1}** is not reserved, please check your info and try again".format(mac,ip,vendor)
+                    msg = "A lease reservation for mac **{0}** fails. The IP **{1}** is not reserved, please check your info and try again".format(mac,ip)
                 self.clive.messages.create(roomId,markdown=msg)  
-                
+                msg='.'
             
             #Case 3: No parameter has been submitted
             else:
@@ -1085,11 +1222,21 @@ class theBot:
                 msg = "There is no info to execute this task. Please use the format **reserve ip mac**"
                 self.clive.messages.create(roomId,markdown=msg)
 
-            msg = '**Task Complete!!!**'
-
+            #msg = '**Task Complete!!!**'
+            msg='.'
+            
  
-   
-
+        elif 'delres' in in_message:    
+            ip = ''.join(re.findall('\w{1,3}\.\w{1,3}\.\w{1,3}\.\w{1,3}',in_message))
+            response = self.cnr.deleteLease(ip)
+            if response == 200:
+                msg = "A lease reservation was deleted for IP **{}**".format(ip)
+            else:
+                msg = "A lease delete for **{}** fails. Please check your info and try again".format(ip)
+            self.clive.messages.create(roomId,markdown=msg)        
+            msg='.'
+               
+            #msg = '**Task Complete!!!**'
 
 
                            
@@ -1130,13 +1277,13 @@ class theBot:
                  \n - **getdhcp** : I'll contact CNR API to see Stats info of DHCPServer
                  \n - **getipuse** : Top stats of DHCP Scopes in use
                  \n - **changevlan switch_ip port vlan name** :  Change Vlan Configuration
+                 \n - **showvlan** : a list of the available vlans
                  \n - **noshut switch_ip port** :  Brings Switch Port UP 
-                 \n - **showint switch_ip port** : Shows Interface Configuration 
-                 \n - **showsvc** :  Info About Me and the services I'm using
+                 \n - **showint switch_ip port** : Shows Interface Configuration               
                  \n - **find x.x.x.x | mac_address | username** : get info from PRIME
-                 \n - **reserve x.x.x.x | mac_address ** : Manage DHCP Lease Reservations
+                 \n - **reserve x.x.x.x | mac_address** : Manage DHCP Lease Reservations
+                 \n - **delres x.x.x.x** : Delete DHCP Lease Reservations
                  \n - **help** : to see this message
-                 \n - **and more...**
                   
                  '''.format(personId)
         

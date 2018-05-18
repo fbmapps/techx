@@ -5,12 +5,22 @@ THIS SHALL RUN IN THE BACKGROUND AS A SERVICE
 VERSION 0.1
 CREATED BY FRBELLO AT CISCO DOT COM
 DATE NOV 2017
+
+
+
+Check every 5 minutes (300secs)
+Dampen Notification to every 15 minutes (900secs)
+
+
 	
 '''
 #Libraries
 import sys,os,datetime,time
 import requests
 from models import *
+from halo import Halo
+from pyfiglet import Figlet
+
 
 #===== Database ORM Libraries =======
 from sqlalchemy import create_engine
@@ -29,6 +39,14 @@ def DateDiff(dtNew, dtOld):
    return diff
 
 
+def print_banner():
+    '''
+    Print a Welcome Banner
+    '''
+    figlet = Figlet(font='slant')
+    banner = figlet.renderText('CliveBot')
+    print(banner)
+    print("[+] 2018 Clive Bot PRIME Continuos Monitoring Tool  www.cisco.com\n")
 
 def DataCollector(p,dbs):
    #REQUESTS ALL Prime Devices
@@ -92,13 +110,14 @@ def DataCollector(p,dbs):
          if devStatus == 'UNREACHABLE':
             #LOGIC To Check if 5minutes passed to restart notify is needed here 
             diff = DateDiff(datetime.datetime.now(),record.last_bot_notify)
-            if diff > 300:
+            if diff > 900: #Notify Window in secs = 15minutes
                record.bot_notify_request = True
                record.last_bot_notify = datetime.datetime.now()
                record.bot_notify_count = record.bot_notify_count + 1
             else:
                record.bot_notify_request = False
-         else:
+         else: #REACHABLE
+            #TODO Notify if the Status Change
             record.bot_notify_request = False
          
 
@@ -130,7 +149,7 @@ def SparkNotifier(dbs):
    records = dbs.query(Notification).filter(Notification.bot_notify_request==True)
   
    msg = ''
-   bot_url = 'http://63.231.220.94:5105/techx/note/'
+   bot_url = 'http://63.231.220.94:5105/techx/v1/note/'
    msg_header = '\n**Unreachable Device List**\n'
    msg_body = ''
    note = {}   
@@ -142,7 +161,7 @@ def SparkNotifier(dbs):
 
 
    for record in records:
-      msg_body = msg_body + "\n - Device: **" + record.devName +"** ipAdd: **" + record.ipAdd + "** location: **" + record.location + "** [more...](" + record.url + ")\n" 
+      msg_body = msg_body + """\n - Device: **{0}**  \nipAdd: **{1}**  \nlocation: **{2}**  \n[more...]({3})\n\n""".format(record.devName,record.ipAdd,record.location,record.url) 
       record.bot_notify_request = True
 
       dbs.commit()
@@ -169,7 +188,9 @@ def SparkNotifier(dbs):
 
 
 def main():
+   print_banner()
    p = PrimeAPI()
+   spinner = Halo(spinner='dots')
 
    db = create_engine('sqlite:///techxdb.db')
    Base.metadata.create_all(db)
@@ -179,17 +200,21 @@ def main():
    dbs = DBSession()
    
    #Process Data
-   print('Processing Data...')
+    
+   spinner.start(text='Processing Data...')
    devices = DataCollector(p,dbs)
   
    time.sleep(5)
+   spinner.succeed(text='Data Collected')
 
    #Send Message for bot Request = True
-   print('Sending Notification...')
+   spinner.start(text='Sending Notification...')
    response = SparkNotifier(dbs)     
+   spinner.succeed(text='Notification sended')   
 
-   print('Process Complete')    
-   return {"response" : "200 OK" }
+
+   spinner.succeed(text='Process Complete')    
+   #return {"response" : "200 OK" }
 
 
 
