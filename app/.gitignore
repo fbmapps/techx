@@ -4,6 +4,8 @@ nohup.out
 *.sh
 *.db
 __pycache__
+static
+static/*.swp
 bot/techxdb.db
 bot/*.py[c]
 start_bot.sh
