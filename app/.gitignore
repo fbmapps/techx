@@ -1,3 +1,7 @@
+# Ignore
 nohup.out
-techxdb.db
+*.log
+*.sh
+bot/techxdb.db
+bot/*.py[c]
 start_bot.sh
