@@ -23,6 +23,8 @@ import os, sys
 from bot import techxbot
 from pyfiglet import Figlet
 from halo import Halo
+import logging
+
 
 __author__ = "Freddy Bello"
 __author_email__ = "frbello@cisco.com"
@@ -30,6 +32,8 @@ __copyright__ = "Copyright (c) 2016-2018 Cisco and/or its affiliates."
 __license__ = "MIT"
 
 
+
+logger = logging.getLogger('cliveBot.MAIN') 
 
 #Functions (IF ANY)
 def print_banner():
@@ -50,17 +54,26 @@ def print_banner():
 if __name__ == '__main__':
     print_banner()
     spinner = Halo(spinner='dots')
+    #logger = logging.getLogger('cliveBot.MAIN')
     try:
         spinner.start(text='Bot Server is starting')
         spinner.succeed(text='Bot Server is running')
         port = int(os.environ.get('PORT',5105))
+        logger.info('Bot Server started Sucessfully!!')
         run(host='0.0.0.0',port=port,debug=True,reloader=True)
-        #spinner.succeed(text='Bot Server is running')
+        logger.info('Bot Server Stop')
     except Exception as e:
         spinner.fail(text='Bot Server fails')
-        print("\n\nError Starting the bot Server: {}\n".format(e))
+        logger.error("Error Starting the bot Server: {}".format(e))
         exit(1)
 
 #FOR GUNICORN
-app = bottle.default_app()
+logger.info('Gunicorn Process Started')
+
+try:
+    app = bottle.default_app()
+except Exception as e:
+    logger.error('Gunicorn Process Fails message:{}'.format(e))
+
+
 

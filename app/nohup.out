@@ -34936,3 +34936,2840 @@ AttributeError: 'NoneType' object has no attribute 'add_extra_file'
 [2018-05-05 22:58:00 -0700] [27140] [INFO] Worker exiting (pid: 27140)
 [2018-05-05 22:58:00 -0700] [22763] [INFO] Shutting down: Master
 [2018-05-05 22:58:00 -0700] [22763] [INFO] Reason: Worker failed to boot.
+[2018-05-16 15:18:06 -0700] [1002] [INFO] Starting gunicorn 19.7.1
+[2018-05-16 15:18:06 -0700] [1002] [INFO] Listening at: http://0.0.0.0:5105 (1002)
+[2018-05-16 15:18:06 -0700] [1002] [INFO] Using worker: sync
+[2018-05-16 15:18:06 -0700] [1007] [INFO] Booting worker with pid: 1007
+[2018-05-16 15:18:06 -0700] [1008] [INFO] Booting worker with pid: 1008
+[2018-05-16 15:18:06 -0700] [1011] [INFO] Booting worker with pid: 1011
+[2018-05-16 15:18:06 -0700] [1012] [INFO] Booting worker with pid: 1012
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vNDkzOGJlZjA
+    tNTE2Mi0xMWU3LWEzNjUtZDFlNzA0NWRmZGFl
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAE67-AF2A-01BB-5147-3FE7DC5E5147
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:19:18 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAE67-AF2A-01BB-5147-3FE7DC5E5147"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvM2Qy
+    MTlkMDAtNTk1Ny0xMWU4LThhM2EtMDMxZjIxMDRkZDk2
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAE82-C3FA-01BB-5E31-3FE7DC5E5E31
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:19:46 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAE82-C3FA-01BB-5E31-3FE7DC5E5E31"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvM2Yy
+    Zjk1NzAtNTk1Ny0xMWU4LThmZDYtY2ZkN2E2YjRiM2Fj
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAE86-D358-01BB-5BF6-3FE7DC5E5BF6
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:19:49 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAE86-D358-01BB-5BF6-3FE7DC5E5BF6"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvNDAy
+    NWI1NDAtNTk1Ny0xMWU4LTg4MjktYzNmMTUzZjNkNGM3
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAE87-AEF6-01BB-0994-3FE7DC5E0994
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:19:51 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAE87-AEF6-01BB-0994-3FE7DC5E0994"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvN2I0
+    ZDI0MDAtNTk1Ny0xMWU4LTlkMTgtMjNjZTAzMjdhNTk5
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAEEB-8830-01BB-61AD-3FE7DC5E61AD
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:21:30 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAEEB-8830-01BB-61AD-3FE7DC5E61AD"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvODY5
+    NTA0ZTAtNTk1Ny0xMWU4LWEyNTYtMDcwMTMzNTMyZWJk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAEFE-C402-01BB-5E31-3FE7DC5E5E31
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:21:50 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAEFE-C402-01BB-5E31-3FE7DC5E5E31"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vNDNmMTE0ZjA
+    tNTkzMi0xMWU4LWJmNjEtYjkwMGIwMmMxODdj
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF0C-A41C-01BB-5D49-3FE7DC5E5D49
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:22:04 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAF0C-A41C-01BB-5D49-3FE7DC5E5D49"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vNDNmMTE0ZjA
+    tNTkzMi0xMWU4LWJmNjEtYjkwMGIwMmMxODdj
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF28-97AA-01BB-5A1C-3FE7DC5E5A1C
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:22:31 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAF28-97AA-01BB-5A1C-3FE7DC5E5A1C"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvYWM3
+    NzMzNDAtNTk1Ny0xMWU4LWI0MDYtZTkwOWFkNmEyNmJh
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF3D-BD1C-01BB-6408-3FE7DC5E6408
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:22:53 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAF3D-BD1C-01BB-6408-3FE7DC5E6408"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvYjVk
+    YjYwMDAtNTk1Ny0xMWU4LTg1NWItYjUyYjc0NzdjYTc0
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF4D-913E-01BB-4525-3FE7DC5E4525
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:23:09 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAF4D-913E-01BB-4525-3FE7DC5E4525"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvYmJk
+    YzE2NzAtNTk1Ny0xMWU4LThkNDktMTdhNmYzMTQ1ODE1
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF57-883C-01BB-61AD-3FE7DC5E61AD
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:23:18 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAF57-883C-01BB-61AD-3FE7DC5E61AD"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvYzVm
+    OWY2NDAtNTk1Ny0xMWU4LWE2ZDctYWZjYWRmYmFkMjgw
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF68-D844-01BB-49A1-3FE7DC5E49A1
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:23:35 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAF68-D844-01BB-49A1-3FE7DC5E49A1"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAF7E-DE12-01BB-560D-3FE7DC5E560D
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:23:58 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAF7E-DE12-01BB-560D-3FE7DC5E560D"}
+[2018-05-16 15:24:28 -0700] [1011] [INFO] Parent changed, shutting down: <Worker 1011>
+[2018-05-16 15:24:28 -0700] [1011] [INFO] Worker exiting (pid: 1011)
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 264, in techxbot
+    message = clive.messages.get(clive_wh.data.id)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/messages.py", line 226, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + messageId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWUy
+    MWY1ZjAtNTk1Ny0xMWU4LTg4MjktYzNmMTUzZjNkNGM3
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFAC-C188-01BB-5C5A-3FE7DC5E5C5A
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:24:43 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 141
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Unable to get message.","errors":[{"description":"Unable to get
+message."}],"trackingId":"ROUTER_5AFCAFAC-C188-01BB-5C5A-3FE7DC5E5C5A"}
+[2018-05-16 15:24:36 -0700] [1012] [INFO] Parent changed, shutting down: <Worker 1012>
+[2018-05-16 15:24:36 -0700] [1012] [INFO] Worker exiting (pid: 1012)
+[2018-05-16 15:24:59 -0700] [1055] [INFO] Starting gunicorn 19.7.1
+[2018-05-16 15:24:59 -0700] [1055] [INFO] Listening at: http://0.0.0.0:5105 (1055)
+[2018-05-16 15:24:59 -0700] [1055] [INFO] Using worker: sync
+[2018-05-16 15:24:59 -0700] [1060] [INFO] Booting worker with pid: 1060
+[2018-05-16 15:24:59 -0700] [1062] [INFO] Booting worker with pid: 1062
+[2018-05-16 15:24:59 -0700] [1065] [INFO] Booting worker with pid: 1065
+[2018-05-16 15:24:59 -0700] [1067] [INFO] Booting worker with pid: 1067
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFE4-B124-01BB-03AB-3FE7DC5E03AB
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:25:40 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAFE4-B124-01BB-03AB-3FE7DC5E03AB"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFEB-BD2E-01BB-6408-3FE7DC5E6408
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:25:47 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAFEB-BD2E-01BB-6408-3FE7DC5E6408"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFEF-BEE6-01BB-7899-3FE7DC5E7899
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:25:51 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAFEF-BEE6-01BB-7899-3FE7DC5E7899"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFF3-B6DE-01BB-6EBF-3FE7DC5E6EBF
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:25:54 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 160
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAFF3-B6DE-01BB-6EBF-3FE7DC5E6EBF"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFFA-B6E0-01BB-6EBF-3FE7DC5E6EBF
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:01 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 160
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAFFA-B6E0-01BB-6EBF-3FE7DC5E6EBF"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCAFFD-BEEC-01BB-7899-3FE7DC5E7899
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:05 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCAFFD-BEEC-01BB-7899-3FE7DC5E7899"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB000-C196-01BB-5C5A-3FE7DC5E5C5A
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:08 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB000-C196-01BB-5C5A-3FE7DC5E5C5A"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB003-9E48-01BB-5272-3FE7DC5E5272
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:11 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB003-9E48-01BB-5272-3FE7DC5E5272"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB00F-C19A-01BB-5C5A-3FE7DC5E5C5A
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:23 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB00F-C19A-01BB-5C5A-3FE7DC5E5C5A"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB020-C578-01BB-5897-3FE7DC5E5897
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:40 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB020-C578-01BB-5897-3FE7DC5E5897"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB020-C576-01BB-5897-3FE7DC5E5897
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:39 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB020-C576-01BB-5897-3FE7DC5E5897"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB027-C57A-01BB-5897-3FE7DC5E5897
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:46 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB027-C57A-01BB-5897-3FE7DC5E5897"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB029-97D4-01BB-5A1C-3FE7DC5E5A1C
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:49 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB029-97D4-01BB-5A1C-3FE7DC5E5A1C"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB030-C88A-01BB-57E7-3FE7DC5E57E7
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:55 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB030-C88A-01BB-57E7-3FE7DC5E57E7"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB033-97D8-01BB-5A1C-3FE7DC5E5A1C
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:26:59 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB033-97D8-01BB-5A1C-3FE7DC5E5A1C"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB03F-A9A2-01BB-5625-3FE7DC5E5625
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:27:11 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB03F-A9A2-01BB-5625-3FE7DC5E5625"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB048-C890-01BB-57E7-3FE7DC5E57E7
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:27:20 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB048-C890-01BB-57E7-3FE7DC5E57E7"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB068-D870-01BB-49A1-3FE7DC5E49A1
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:27:53 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB068-D870-01BB-49A1-3FE7DC5E49A1"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB06F-824E-01BB-73C7-3FE7DC5E73C7
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:27:59 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB06F-824E-01BB-73C7-3FE7DC5E73C7"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB06F-B14A-01BB-03AB-3FE7DC5E03AB
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:27:58 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB06F-B14A-01BB-03AB-3FE7DC5E03AB"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB07A-A458-01BB-5D49-3FE7DC5E5D49
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:28:10 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB07A-A458-01BB-5D49-3FE7DC5E5D49"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB082-A206-01BB-5105-3FE7DC5E5105
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:28:17 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB082-A206-01BB-5105-3FE7DC5E5105"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB0A5-E65E-01BB-0DFA-3FE7DC5E0DFA
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:28:53 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 160
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB0A5-E65E-01BB-0DFA-3FE7DC5E0DFA"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB0AD-A20E-01BB-5105-3FE7DC5E5105
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:29:01 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB0AD-A20E-01BB-5105-3FE7DC5E5105"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB1D3-A464-01BB-5D49-3FE7DC5E5D49
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:33:55 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB1D3-A464-01BB-5D49-3FE7DC5E5D49"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB1DF-A466-01BB-5D49-3FE7DC5E5D49
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:34:07 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB1DF-A466-01BB-5D49-3FE7DC5E5D49"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB29F-A218-01BB-5105-3FE7DC5E5105
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:37:19 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB29F-A218-01BB-5105-3FE7DC5E5105"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB2A9-AF88-01BB-5147-3FE7DC5E5147
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:37:29 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB2A9-AF88-01BB-5147-3FE7DC5E5147"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB2B6-9F6A-01BB-5DA5-3FE7DC5E5DA5
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:37:41 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB2B6-9F6A-01BB-5DA5-3FE7DC5E5DA5"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB2C2-AD44-01BB-5559-3FE7DC5E5559
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:37:54 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB2C2-AD44-01BB-5559-3FE7DC5E5559"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB2C4-C1CE-01BB-5C5A-3FE7DC5E5C5A
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:37:56 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 160
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB2C4-C1CE-01BB-5C5A-3FE7DC5E5C5A"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vYzA2MDU5Zjc
+    tZjM3OC0zNmMyLThlMDktZDBhZTFiNDc0NTQz
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB2CE-A9CA-01BB-5625-3FE7DC5E5625
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:38:06 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB2CE-A9CA-01BB-5625-3FE7DC5E5625"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB692-B174-01BB-03AB-3FE7DC5E03AB
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 22:54:10 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB692-B174-01BB-03AB-3FE7DC5E03AB"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vMGE3NDIxMTA
+    tMGRiMy0xMWU4LTgzYzEtZDNjNGM3ZmVkYzNj
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCB83B-DE74-01BB-560D-3FE7DC5E560D
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Wed, 16 May 2018 23:01:14 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCB83B-DE74-01BB-560D-3FE7DC5E560D"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vMDMxMTRlMDA
+    tZTAxYy0xMWU1LWJlZjgtNjcwNWQ1MWUzYWQ3
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCCA0C-AD8A-01BB-5559-3FE7DC5E5559
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 00:17:16 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCCA0C-AD8A-01BB-5559-3FE7DC5E5559"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vMDMxMTRlMDA
+    tZTAxYy0xMWU1LWJlZjgtNjcwNWQ1MWUzYWQ3
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCCAE2-82B4-01BB-73C7-3FE7DC5E73C7
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 00:20:50 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCCAE2-82B4-01BB-73C7-3FE7DC5E73C7"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDC8E-C4D4-01BB-5932-3FE7DC5E5932
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:36:14 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDC8E-C4D4-01BB-5932-3FE7DC5E5932"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD28-B008-01BB-4BFF-3FE7DC5E4BFF
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:38:48 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD28-B008-01BB-4BFF-3FE7DC5E4BFF"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD2F-D90E-01BB-4404-3FE7DC5E4404
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:38:55 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD2F-D90E-01BB-4404-3FE7DC5E4404"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD3A-920E-01BB-3FCF-3FE7DC5E3FCF
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:39:05 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 160
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD3A-920E-01BB-3FCF-3FE7DC5E3FCF"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD45-E6F2-01BB-08AA-3FE7DC5E08AA
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:39:17 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD45-E6F2-01BB-08AA-3FE7DC5E08AA"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD5E-B368-01BB-5662-3FE7DC5E5662
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:39:42 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD5E-B368-01BB-5662-3FE7DC5E5662"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD6A-ADCA-01BB-5019-3FE7DC5E5019
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:39:53 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD6A-ADCA-01BB-5019-3FE7DC5E5019"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD74-82F4-01BB-6EE6-3FE7DC5E6EE6
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:40:03 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 162
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD74-82F4-01BB-6EE6-3FE7DC5E6EE6"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD7A-D94C-01BB-4ACD-3FE7DC5E4ACD
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:40:10 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD7A-D94C-01BB-4ACD-3FE7DC5E4ACD"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD89-C632-01BB-535C-3FE7DC5E535C
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:40:25 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD89-C632-01BB-535C-3FE7DC5E535C"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD8F-B1F4-01BB-7CF0-3FE7DC5E7CF0
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:40:31 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD8F-B1F4-01BB-7CF0-3FE7DC5E7CF0"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vZTA0YjlmYjE
+    tMTU1Ni0zYzcyLTllODEtZmE0NmRmNmQwOWVk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDD92-DEBA-01BB-487C-3FE7DC5E487C
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:40:34 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDD92-DEBA-01BB-487C-3FE7DC5E487C"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vNGQzNTQwYWI
+    tM2RmZC0zZmQ0LWEzYWQtNTRiZDZkMTI3ZTZk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDDDA-BFB6-01BB-7475-3FE7DC5E7475
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:41:46 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 161
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDDDA-BFB6-01BB-7475-3FE7DC5E7475"}
+Traceback (most recent call last):
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 862, in _handle
+    return route.call(**args)
+  File "/home/techx/pyenvs/techx.bot/env/bin/bottle.py", line 1740, in wrapper
+    rv = callback(*a, **ka)
+  File "/home/techx/pyenvs/techx.bot/app/bot/techxbot.py", line 263, in techxbot
+    room = clive.rooms.get(clive_wh.data.roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/api/rooms.py", line 172, in get
+    json_data = self._session.get(API_ENDPOINT + '/' + roomId)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 311, in get
+    response = self.request('GET', url, erc, params=params, **kwargs)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/restsession.py", line 276, in request
+    check_response_code(response, erc)
+  File "/home/techx/pyenvs/techx.bot/env/lib/python3.6/site-packages/ciscosparkapi/utils.py", line 192, in check_response_code
+    raise SparkApiError(response)
+ciscosparkapi.exceptions.SparkApiError: Response Code [404] Not Found - The URI requested is invalid or the resource requested, such as a user, does not exist. Also returned when the requested format is not supported by the requested method.
+------------------------------------Request------------------------------------
+GET https://api.ciscospark.com/v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vNGQzNTQwYWI
+    tM2RmZC0zZmQ0LWEzYWQtNTRiZDZkMTI3ZTZk
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+
+
+
+-----------------------------------Response------------------------------------
+404 Not Found
+TrackingID: ROUTER_5AFCDEA7-A50A-01BB-57FF-3FE7DC5E57FF
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 17 May 2018 01:45:10 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 160
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Could not find a room with provided
+ID.","errors":[{"description":"Could not find a room with provided
+ID."}],"trackingId":"ROUTER_5AFCDEA7-A50A-01BB-57FF-3FE7DC5E57FF"}
+[2018-05-16 19:34:57 -0700] [1055] [CRITICAL] WORKER TIMEOUT (pid:1060)
+[2018-05-16 19:34:57 -0700] [1060] [INFO] Worker exiting (pid: 1060)
+[2018-05-16 19:34:57 -0700] [2216] [INFO] Booting worker with pid: 2216
+Failed to create URI List from file message:[Errno 2] No such file or directory: 'techxbot.py'
+Failed to create a Order list from file message:[Errno 2] No such file or directory: 'models.py'
+Failed to check Backend status message: [Errno 2] No such file or directory: 'models.py'
+[2018-05-16 19:36:43 -0700] [2216] [INFO] Parent changed, shutting down: <Worker 2216>
+[2018-05-16 19:36:43 -0700] [2216] [INFO] Worker exiting (pid: 2216)
+{'status_code': 200}
+{'status_code': 500}
+{'status_code': 500}
+[2018-05-16 19:36:44 -0700] [1067] [INFO] Parent changed, shutting down: <Worker 1067>
+[2018-05-16 19:36:44 -0700] [1067] [INFO] Worker exiting (pid: 1067)

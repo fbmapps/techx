@@ -1,0 +1,1558 @@
+2018-05-16 14:38:20,627 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:38:20,627 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:38:20,628 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:38:20,628 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:38:20,628 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:38:20,629 - cliveBot - INFO - Sending Order to Bot: Clive getprime
+2018-05-16 14:38:24,064 - cliveBot - INFO - Order executed
+2018-05-16 14:38:39,692 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:38:39,693 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:38:39,693 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:38:39,694 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:38:39,694 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:38:39,695 - cliveBot - INFO - Sending Order to Bot: Clive getcmxcount
+2018-05-16 14:38:40,487 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-16 14:38:40,713 - cliveBot - INFO - Order executed
+2018-05-16 14:38:57,992 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:38:57,992 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:38:57,993 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:38:57,993 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:38:57,993 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:38:57,994 - cliveBot - INFO - Sending Order to Bot: Clive whereis 10.16.0.102
+2018-05-16 14:38:58,681 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-16 14:38:59,505 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-16 14:39:13,419 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:39:13,419 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:39:13,419 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:39:13,420 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:39:13,420 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:39:13,420 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-16 14:39:14,117 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-16 14:39:14,880 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-16 14:39:32,368 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:39:32,368 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:39:32,369 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:39:32,369 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:39:32,369 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:39:32,370 - cliveBot - INFO - Sending Order to Bot: Clive getdhcp
+2018-05-16 14:39:33,580 - cliveBot - INFO - Order executed
+2018-05-16 14:39:43,425 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:39:43,425 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:39:43,425 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:39:43,425 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:39:43,426 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:39:43,426 - cliveBot - INFO - Sending Order to Bot: Clive getipuse
+2018-05-16 14:39:44,514 - cliveBot - INFO - Order executed
+2018-05-16 14:40:03,839 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:40:03,839 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:40:03,839 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:40:03,839 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:40:03,840 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:40:03,840 - cliveBot - INFO - Sending Order to Bot: Clive showvlan
+2018-05-16 14:40:04,588 - cliveBot - INFO - Order executed
+2018-05-16 14:40:37,743 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:40:37,743 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:40:37,744 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:40:37,744 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:40:37,744 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:40:37,744 - cliveBot - INFO - Sending Order to Bot: Clive showint 10.101.1.50 1/0/4
+2018-05-16 14:40:45,013 - cliveBot - INFO - Order executed
+2018-05-16 14:41:10,670 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:41:10,670 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:41:10,670 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:41:10,671 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:41:10,671 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:41:10,671 - cliveBot - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-16 14:41:12,100 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:41:12,177 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-16 14:41:12,976 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-16 14:41:15,889 - cliveBot - INFO - Order executed
+2018-05-16 14:41:28,328 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:41:28,329 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:41:28,329 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:41:28,329 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:41:28,329 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:41:28,330 - cliveBot - INFO - Sending Order to Bot: Clive find brbeaver
+2018-05-16 14:41:30,062 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:41:30,135 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-16 14:41:30,893 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-16 14:41:36,433 - cliveBot - INFO - Order executed
+2018-05-16 14:41:59,134 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 14:41:59,134 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 14:41:59,134 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 14:41:59,135 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 14:41:59,135 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 14:41:59,135 - cliveBot - INFO - Sending Order to Bot: Clive showsvc
+2018-05-16 14:41:59,905 - cliveBot - INFO - Order executed
+2018-05-16 14:53:33,165 - cliveBot - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 14:53:33,394 - cliveBot - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 14:58:35,232 - cliveBot - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 14:58:35,413 - cliveBot - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 15:05:49,479 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Message from tty1(user id: noc): This is an ERROR MSG TEST from Cisco IOS log
+2018-05-16 15:05:49,706 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 15:09:51,464 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:13:19,961 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:13:20,111 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:14:33,748 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:14:34,645 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:16:04,009 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:16:04,909 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:16:17,614 - cliveBot.MAIN - INFO - Bot Restarts...
+2018-05-16 15:16:18,105 - cliveBot.MAIN - INFO - Bot Restarts...
+2018-05-16 15:17:14,219 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:17:15,146 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 15:17:54,126 - cliveBot.MAIN - INFO - Bot Server Stop
+2018-05-16 15:17:54,652 - cliveBot.MAIN - INFO - Bot Server Stop
+2018-05-16 15:18:45,491 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-16 15:18:45,491 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-16 15:18:45,492 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-16 15:18:45,492 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-16 15:18:45,492 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-16 15:18:45,493 - cliveBot - INFO - Sending Order to Bot: Clive help
+2018-05-16 15:18:46,460 - cliveBot - INFO - Order executed
+2018-05-16 15:25:00,680 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-16 15:25:00,691 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-16 15:25:00,815 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-16 15:25:00,872 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-16 15:28:44,995 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 15:28:45,219 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 15:53:32,633 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 15:53:32,899 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 15:58:34,347 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 15:58:34,503 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 16:28:40,770 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 16:28:40,930 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 16:53:33,437 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 16:53:33,706 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 16:58:34,149 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 16:58:34,311 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 17:28:41,145 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 17:28:41,365 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 17:53:32,832 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 17:53:33,112 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 17:58:34,830 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 17:58:35,034 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 18:28:41,307 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 18:28:41,659 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 18:53:33,942 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 18:53:34,108 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 18:58:34,771 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 18:58:35,106 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 19:28:42,050 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 19:28:42,290 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 19:34:58,397 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-16 19:37:13,727 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 19:37:14,640 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 19:39:07,984 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 19:39:47,865 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 19:39:55,824 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 19:46:11,263 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 19:46:30,375 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 19:46:38,299 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 19:49:05,460 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 19:49:35,043 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 19:50:51,582 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 19:51:03,154 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 19:51:32,325 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 19:53:34,014 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 19:53:34,189 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 19:58:34,068 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 19:58:34,219 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 20:28:41,013 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 20:28:41,207 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 20:39:59,033 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 20:53:34,144 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 20:53:34,303 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 20:58:33,882 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 20:58:34,103 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 21:04:34,603 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-16 21:04:42,666 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:06:57,876 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:07:59,043 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:13:08,667 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:13:49,171 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:13:49,352 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:13:49,529 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:16:46,378 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:16:46,574 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:17:18,963 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:17:19,157 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:17:19,349 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:18:33,632 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:18:33,819 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:18:58,803 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:18:58,998 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:19:28,361 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:19:28,542 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:20:20,267 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:20:35,024 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:20:35,224 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:20:35,423 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:26:07,544 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:28:42,023 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 21:28:42,350 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 21:44:58,143 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:45:19,050 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:46:21,468 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:46:44,909 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:47:18,979 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:47:22,574 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:53:33,754 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 21:53:33,949 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 21:58:33,983 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 21:58:34,148 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 21:58:46,032 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 21:58:46,036 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:01:06,562 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:03:19,146 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:03:19,148 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:05:18,237 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:05:18,241 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:06:58,891 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:06:58,895 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:07:18,967 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:07:18,969 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:11:59,853 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 22:15:13,655 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:15:13,857 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:15:13,860 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 22:16:48,915 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:16:48,917 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:16:48,918 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 22:20:26,825 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 22:20:26,829 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 22:20:26,831 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 22:28:41,751 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 22:28:41,907 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 23:06:18,944 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-16 23:06:18,949 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-16 23:06:18,951 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-16 23:28:42,328 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 23:28:42,485 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 23:53:34,900 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 23:53:35,089 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-16 23:58:33,780 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-16 23:58:33,998 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 00:28:42,450 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 00:28:42,689 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 00:53:34,554 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 00:53:34,732 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 00:58:33,086 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 00:58:33,276 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 01:28:42,130 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 01:28:42,493 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 01:53:34,982 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 01:53:35,336 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 01:58:33,196 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 01:58:33,438 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 02:28:42,949 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 02:28:43,112 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 02:53:35,072 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 02:53:35,252 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 02:58:32,885 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 02:58:33,041 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 03:28:42,709 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 03:28:42,914 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 03:53:35,850 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 03:53:36,058 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 03:58:32,886 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 03:58:33,042 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 04:28:43,630 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 04:28:43,805 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 04:53:35,363 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 04:53:35,584 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 04:58:33,089 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 04:58:33,256 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 05:28:43,479 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 05:28:43,731 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 05:53:36,260 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 05:53:36,488 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 05:58:32,125 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 05:58:32,306 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:06:02,782 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:06:02,782 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:06:02,782 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:06:02,782 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:06:02,783 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:06:02,783 - cliveBot - INFO - Sending Order to Bot: Clive ruthere
+2018-05-17 06:06:05,483 - cliveBot - INFO - Order executed
+2018-05-17 06:06:23,585 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:06:23,585 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:06:23,586 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:06:23,586 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:06:23,586 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:06:23,586 - cliveBot - INFO - Sending Order to Bot: Clive find brbeaver
+2018-05-17 06:06:25,531 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:06:25,601 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 06:06:26,389 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-17 06:06:33,605 - cliveBot - INFO - Order executed
+2018-05-17 06:07:49,206 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:07:49,207 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:07:49,207 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:07:49,207 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:07:49,207 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:07:49,208 - cliveBot - INFO - Sending Order to Bot: Clive find 10.19.40.208
+2018-05-17 06:07:53,648 - cliveBot - INFO - Order executed
+2018-05-17 06:08:44,883 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:08:44,884 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:08:44,884 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:08:44,884 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:08:44,884 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:08:44,885 - cliveBot - INFO - Sending Order to Bot: Clive help
+2018-05-17 06:08:45,921 - cliveBot - INFO - Order executed
+2018-05-17 06:09:13,333 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:09:13,334 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:09:13,334 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:09:13,334 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:09:13,334 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:09:13,335 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.101.250.250 112233445566
+2018-05-17 06:09:14,764 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 06:09:14,764 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 06:09:15,265 - cliveBot - INFO - Order executed
+2018-05-17 06:10:01,349 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:10:01,349 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:10:01,349 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:10:01,349 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:10:01,350 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:10:01,350 - cliveBot - INFO - Sending Order to Bot: Clive delreserve 10.101.250.250
+2018-05-17 06:10:02,622 - cliveBot.CnrAPI - INFO - Lease info retrieved sucessfully
+2018-05-17 06:10:52,658 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:10:52,658 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:10:52,659 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:10:52,659 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:10:52,659 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:10:52,660 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.19.40.208
+2018-05-17 06:10:53,767 - cliveBot.CnrAPI - INFO - Lease info retrieved sucessfully
+2018-05-17 06:10:54,347 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 06:10:54,347 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 06:10:54,829 - cliveBot - INFO - Order executed
+2018-05-17 06:12:32,933 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:12:32,934 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:12:32,934 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:12:32,934 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:12:32,934 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:12:32,935 - cliveBot - INFO - Sending Order to Bot: Clive delreserve 10.19.40.208
+2018-05-17 06:12:33,830 - cliveBot.CnrAPI - INFO - Lease info retrieved sucessfully
+2018-05-17 06:12:34,260 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 06:12:34,261 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 06:12:34,822 - cliveBot - INFO - Order executed
+2018-05-17 06:14:53,439 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:14:53,439 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:14:53,439 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:14:53,439 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:14:53,440 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:14:53,440 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbbeaver
+2018-05-17 06:14:54,410 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 06:14:55,121 - cliveBot.CmxAPI - INFO - CMX info found for query brbbeaver
+2018-05-17 06:15:54,087 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:15:54,087 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:15:54,087 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:15:54,087 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:15:54,087 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:15:54,088 - cliveBot - INFO - Sending Order to Bot: Clive showint 10.101.1.50 1/0/1
+2018-05-17 06:16:02,166 - cliveBot - INFO - Order executed
+2018-05-17 06:17:05,722 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:17:05,722 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:17:05,723 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:17:05,723 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:17:05,723 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:17:05,724 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.1.50 1/0/1 nocwired
+2018-05-17 06:17:13,288 - cliveBot.DeviceControl - INFO - A Vlan Change has been requested
+2018-05-17 06:17:41,602 - cliveBot.DeviceControl - INFO - Device commands executed sucessfully in 10.101.1.50
+2018-05-17 06:17:41,910 - cliveBot - INFO - Order executed
+2018-05-17 06:17:44,036 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard enabled on port GigabitEthernet1/0/1.
+2018-05-17 06:17:44,242 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:17:46,024 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard enabled on port GigabitEthernet1/0/1.
+2018-05-17 06:17:46,269 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:19:18,178 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:19:18,178 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:19:18,179 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:19:18,179 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:19:18,179 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:19:18,180 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.1.50 1/0/1 devnet
+2018-05-17 06:19:25,799 - cliveBot.DeviceControl - INFO - A Vlan Change has been requested
+2018-05-17 06:19:54,117 - cliveBot.DeviceControl - INFO - Device commands executed sucessfully in 10.101.1.50
+2018-05-17 06:19:54,514 - cliveBot - INFO - Order executed
+2018-05-17 06:19:57,807 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard disabled on port GigabitEthernet1/0/1.
+2018-05-17 06:19:58,131 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:20:00,434 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard enabled on port GigabitEthernet1/0/1.
+2018-05-17 06:20:00,649 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:20:02,374 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard disabled on port GigabitEthernet1/0/1.
+2018-05-17 06:20:02,542 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:20:04,930 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard enabled on port GigabitEthernet1/0/1.
+2018-05-17 06:20:05,138 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:20:11,095 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard disabled on port GigabitEthernet1/0/1.
+2018-05-17 06:20:11,451 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:20:15,904 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard enabled on port GigabitEthernet1/0/1.
+2018-05-17 06:20:16,331 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:20:21,461 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.101.1.50 - Root guard disabled on port GigabitEthernet1/0/1.
+2018-05-17 06:20:21,792 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:27:32,843 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 06:27:32,847 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 06:27:32,850 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 06:28:43,798 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.251 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 06:28:44,626 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:29:50,458 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 06:33:59,752 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 06:39:51,085 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 06:41:57,184 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 06:41:57,188 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 06:41:57,191 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 06:48:32,785 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:48:32,786 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:48:32,786 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:48:32,786 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:48:32,786 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:48:32,787 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.1.50 1/0/1 nocwired
+2018-05-17 06:48:41,154 - cliveBot.DeviceControl - INFO - A Vlan Change has been requested
+2018-05-17 06:49:09,459 - cliveBot.DeviceControl - INFO - Device commands executed sucessfully in 10.101.1.50
+2018-05-17 06:49:10,818 - cliveBot - INFO - Order executed
+2018-05-17 06:49:45,180 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:49:45,180 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:49:45,181 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:49:45,181 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:49:45,181 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:49:45,181 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.50.1 1/0/1 devnet
+2018-05-17 06:53:13,705 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:53:13,705 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:53:13,705 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:53:13,705 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:53:13,706 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:53:13,706 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.1.50 1/0/1 devnet
+2018-05-17 06:53:22,117 - cliveBot.DeviceControl - INFO - A Vlan Change has been requested
+2018-05-17 06:53:50,597 - cliveBot.DeviceControl - INFO - Device commands executed sucessfully in 10.101.1.50
+2018-05-17 06:53:51,078 - cliveBot - INFO - Order executed
+2018-05-17 06:53:54,799 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 06:53:55,639 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:53:56,808 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 06:53:57,936 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:54:05,816 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 06:54:06,405 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:58:30,554 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:58:30,554 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:58:30,555 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:58:30,555 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:58:30,555 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:58:30,555 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.19.40.208
+2018-05-17 06:58:33,297 - cliveBot.CnrAPI - INFO - Lease info retrieved sucessfully
+2018-05-17 06:58:33,343 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 06:58:33,344 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 06:58:35,253 - cliveBot - INFO - Order executed
+2018-05-17 06:58:36,292 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 06:58:37,231 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 06:59:19,181 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 06:59:19,182 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 06:59:19,182 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 06:59:19,182 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 06:59:19,182 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 06:59:19,183 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.19.40.208
+2018-05-17 07:03:45,754 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 07:04:06,788 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 07:04:06,788 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 07:04:06,788 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 07:04:06,789 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 07:04:06,789 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 07:04:06,789 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.19.40.208
+2018-05-17 07:04:35,771 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 07:04:50,141 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 07:04:50,141 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 07:04:50,141 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 07:04:50,141 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 07:04:50,141 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 07:04:50,142 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.19.40.208
+2018-05-17 07:04:52,731 - cliveBot - ERROR - Communication Error with Clive message:name 'ip' is not defined
+2018-05-17 07:53:36,361 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 07:53:38,027 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 07:58:32,708 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 07:58:34,987 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 08:53:36,982 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 08:53:37,901 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 08:58:32,375 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 08:58:33,711 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 09:32:27,603 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:32:27,603 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:32:27,603 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:32:27,603 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:32:27,604 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:32:27,604 - cliveBot - INFO - Sending Order to Bot: Clive help
+2018-05-17 09:32:29,997 - cliveBot - INFO - Order executed
+2018-05-17 09:33:33,369 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:33:33,369 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:33:33,370 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:33:33,370 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:33:33,370 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:33:33,371 - cliveBot - INFO - Sending Order to Bot: Clive showint 10.101.1.50 1/0/1
+2018-05-17 09:33:42,684 - cliveBot - INFO - Order executed
+2018-05-17 09:34:21,820 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:34:21,820 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:34:21,820 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:34:21,820 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:34:21,821 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:34:21,821 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.1.50 nocwired
+2018-05-17 09:34:30,640 - cliveBot.DeviceControl - INFO - A Vlan Change has been requested
+2018-05-17 09:34:58,945 - cliveBot.DeviceControl - INFO - Device commands executed sucessfully in 10.101.1.50
+2018-05-17 09:35:00,047 - cliveBot - INFO - Order executed
+2018-05-17 09:35:15,579 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:35:15,579 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:35:15,580 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:35:15,580 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:35:15,580 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:35:15,581 - cliveBot - INFO - Sending Order to Bot: Clive changevlan 10.101.1.50 1/0/1 nocwired
+2018-05-17 09:35:23,422 - cliveBot.DeviceControl - INFO - A Vlan Change has been requested
+2018-05-17 09:35:51,937 - cliveBot.DeviceControl - INFO - Device commands executed sucessfully in 10.101.1.50
+2018-05-17 09:35:53,654 - cliveBot - INFO - Order executed
+2018-05-17 09:36:33,893 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:36:33,893 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:36:33,894 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:36:33,894 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:36:33,894 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:36:33,895 - cliveBot - INFO - Sending Order to Bot: Clive showvlan
+2018-05-17 09:36:36,339 - cliveBot - INFO - Order executed
+2018-05-17 09:37:29,317 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:37:29,317 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:37:29,318 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:37:29,318 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:37:29,318 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:37:29,319 - cliveBot - INFO - Sending Order to Bot: Clive find brbeaver
+2018-05-17 09:37:32,174 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:37:32,254 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 09:37:33,014 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-17 09:37:46,475 - cliveBot - INFO - Order executed
+2018-05-17 09:45:00,302 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 09:45:00,302 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 09:45:00,302 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 09:45:00,302 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 09:45:00,303 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 09:45:00,303 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 09:45:01,409 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 09:45:02,374 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-17 09:45:08,736 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDB194-B714-01BB-5A0F-3FE7DC5E5A0F
+Content-Type: application/json
+Date: Thu, 17 May 2018 16:45:15 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDB194-B714-01BB-5A0F-3FE7DC5E5A0F"}
+2018-05-17 09:53:36,051 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 09:53:36,435 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 09:58:31,554 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 09:58:32,391 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 10:53:36,885 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 10:53:37,264 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 10:58:31,256 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 10:58:31,970 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 11:18:16,412 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 11:18:16,412 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 11:18:16,413 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 11:18:16,413 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 11:18:16,413 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 11:18:16,414 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 11:18:17,537 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 11:18:18,298 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-17 11:18:24,047 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDC770-CAE0-01BB-5738-3FE7DC5E5738
+Content-Type: application/json
+Date: Thu, 17 May 2018 18:18:30 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDC770-CAE0-01BB-5738-3FE7DC5E5738"}
+2018-05-17 11:43:01,441 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 11:43:26,636 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 11:43:26,637 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 11:43:26,637 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 11:43:26,637 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 11:43:26,637 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 11:43:26,638 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 11:43:27,513 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 11:43:27,907 - cliveBot - ERROR - Communication Error with Clive message:'macAddress'
+2018-05-17 11:53:37,003 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 11:53:37,345 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 11:58:31,324 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 11:58:31,691 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 12:04:52,700 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:04:52,700 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:04:52,700 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:04:52,700 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:04:52,701 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:04:52,701 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.19.40.208
+2018-05-17 12:04:53,828 - cliveBot - ERROR - Communication Error with Clive message:name 'ip' is not defined
+2018-05-17 12:05:30,899 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:05:42,169 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:05:42,169 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:05:42,170 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:05:42,170 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:05:42,170 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:05:42,171 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.19.40.208
+2018-05-17 12:05:43,016 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:05:43,525 - cliveBot - INFO - Order executed
+2018-05-17 12:08:20,687 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:08:20,687 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:08:20,688 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:08:20,688 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:08:20,688 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:08:20,689 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.19.40.208 11:22:33:44:55:66
+2018-05-17 12:08:21,903 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 12:08:21,904 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 12:08:22,712 - cliveBot - INFO - Order executed
+2018-05-17 12:10:54,596 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:10:54,597 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:10:54,597 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:10:54,597 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:10:54,597 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:10:54,611 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.108
+2018-05-17 12:10:55,262 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:10:55,805 - cliveBot - INFO - Order executed
+2018-05-17 12:11:44,622 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:11:44,623 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:11:44,623 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:11:44,623 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:11:44,623 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:11:44,624 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.16.0.109 11:22:33:44:55:66
+2018-05-17 12:11:45,889 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 12:11:45,889 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 12:11:46,532 - cliveBot - INFO - Order executed
+2018-05-17 12:12:33,523 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:12:33,524 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:12:33,524 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:12:33,524 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:12:33,524 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:12:33,525 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.109
+2018-05-17 12:12:34,364 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:12:35,025 - cliveBot - INFO - Order executed
+2018-05-17 12:13:08,789 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:13:08,789 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:13:08,790 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:13:08,790 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:13:08,790 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:13:08,790 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 12:13:09,531 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:13:10,116 - cliveBot - INFO - Order executed
+2018-05-17 12:14:38,552 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:15:26,661 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:15:45,627 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:16:00,079 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:16:00,079 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:16:00,080 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:16:00,080 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:16:00,080 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:16:00,081 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 12:16:01,384 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:16:03,445 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD4F8-AA02-01BB-588F-3FE7DC5E588F
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:16:10 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 158
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD4F8-AA02-01BB-588F-3FE7DC5E588F"}
+2018-05-17 12:17:02,690 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:17:15,535 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:17:15,535 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:17:15,535 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:17:15,535 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:17:15,536 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:17:15,536 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.19.0.109
+2018-05-17 12:17:16,235 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:17:16,909 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD543-E364-01BB-4ACD-3FE7DC5E4ACD
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:17:24 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD543-E364-01BB-4ACD-3FE7DC5E4ACD"}
+2018-05-17 12:17:33,429 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:17:33,429 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:17:33,429 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:17:33,429 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:17:33,430 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:17:33,430 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.109
+2018-05-17 12:17:34,002 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:17:34,682 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD555-CF08-01BB-5932-3FE7DC5E5932
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:17:41 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD555-CF08-01BB-5932-3FE7DC5E5932"}
+2018-05-17 12:20:17,381 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:20:17,381 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:20:17,381 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:20:17,381 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:20:17,382 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:20:17,382 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.16.0.114 11:22:33:44:55:66
+2018-05-17 12:20:18,211 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 12:20:18,211 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 12:20:18,860 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD5F9-C1D6-01BB-69CC-3FE7DC5E69CC
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:20:25 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD5F9-C1D6-01BB-69CC-3FE7DC5E69CC"}
+2018-05-17 12:21:54,221 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:21:54,222 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:21:54,222 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:21:54,222 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:21:54,222 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:21:54,223 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 12:21:54,907 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:21:55,444 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD65A-B868-01BB-5FCF-3FE7DC5E5FCF
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:22:02 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD65A-B868-01BB-5FCF-3FE7DC5E5FCF"}
+2018-05-17 12:22:39,058 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:24:44,180 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:25:23,739 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:25:23,739 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:25:23,739 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:25:23,739 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:25:23,740 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:25:23,740 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.16.0.114 11:22:33:44:55:66
+2018-05-17 12:25:25,055 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 12:25:25,055 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 12:25:25,775 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD72B-DE92-01BB-56DF-3FE7DC5E56DF
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:25:33 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 156
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD72B-DE92-01BB-56DF-3FE7DC5E56DF"}
+2018-05-17 12:25:54,462 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:25:54,462 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:25:54,462 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:25:54,462 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:25:54,463 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:25:54,463 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 12:25:55,222 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:25:56,058 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDD74A-B976-01BB-5A0F-3FE7DC5E5A0F
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:26:03 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDD74A-B976-01BB-5A0F-3FE7DC5E5A0F"}
+2018-05-17 12:34:45,892 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:35:26,730 - cliveBot.MAIN - INFO - Bot Server Stop
+2018-05-17 12:35:26,730 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-17 12:35:27,391 - cliveBot.MAIN - INFO - Bot Server Stop
+2018-05-17 12:35:27,391 - cliveBot.MAIN - INFO - Gunicorn Process Started
+2018-05-17 12:35:33,085 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:35:34,020 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:36:54,135 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:39:47,286 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:39:47,287 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:39:47,287 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:39:47,287 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:39:47,287 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:39:47,288 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.16.0.114 11:22:33:44:55:66
+2018-05-17 12:39:48,223 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 12:39:48,224 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 12:39:48,841 - cliveBot - ERROR - Communication Error with Clive message:Response Code [400] Bad Request - The request was invalid or cannot be otherwise served. An accompanying error message will explain further.
+------------------------------------Request------------------------------------
+POST https://api.ciscospark.com/v1/messages
+User-Agent: python-requests/2.18.4
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Authorization: Bearer <redacted>
+Content-type: application/json;charset=utf-8
+Content-Length: 106
+
+{"roomId":
+"Y2lzY29zcGFyazovL3VzL1JPT00vZGM2OWE2YTAtNTU1Ni0xMWU4LWFhMTYtMzU4ZTU1Y2UwNDRl",
+"markdown": ""}
+
+-----------------------------------Response------------------------------------
+400 Bad Request
+TrackingID: ROUTER_5AFDDA8B-AD18-01BB-4BB2-3FE7DC5E4BB2
+Content-Type: application/json
+Date: Thu, 17 May 2018 19:39:56 GMT
+Server: Redacted
+l5d-success-class: 1.0
+Via: 1.1 linkerd
+content-encoding: gzip
+content-length: 157
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+{"message":"Both text and file cannot be empty.","errors":[{"description":"Both
+text and file cannot be
+empty."}],"trackingId":"ROUTER_5AFDDA8B-AD18-01BB-4BB2-3FE7DC5E4BB2"}
+2018-05-17 12:40:24,361 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:42:29,520 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:42:45,825 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:42:45,825 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:42:45,825 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:42:45,825 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:42:45,825 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:42:45,825 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 12:42:46,552 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:42:47,110 - cliveBot - INFO - Order executed
+2018-05-17 12:43:17,119 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:43:17,120 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:43:17,120 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:43:17,120 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:43:17,120 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:43:17,120 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.16.0.114 11:22:33:44:55:66
+2018-05-17 12:43:17,895 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 12:43:17,895 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 12:43:18,534 - cliveBot - INFO - Order executed
+2018-05-17 12:43:42,095 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 12:43:42,095 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 12:43:42,095 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 12:43:42,095 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 12:43:42,095 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 12:43:42,096 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 12:43:42,685 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 12:43:43,199 - cliveBot - INFO - Order executed
+2018-05-17 12:44:35,747 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:45:35,756 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 12:53:37,488 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 12:53:37,676 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 12:58:31,147 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 12:58:31,370 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 12:59:56,760 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:00:05,860 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:00:05,860 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:00:05,860 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:00:05,861 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:00:05,861 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:00:05,862 - cliveBot - INFO - Sending Order to Bot: Clive showvlan
+2018-05-17 13:00:06,985 - cliveBot - INFO - Order executed
+2018-05-17 13:05:23,091 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:05:55,669 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:05:55,670 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:05:55,670 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:05:55,670 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:05:55,670 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:05:55,671 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:05:56,363 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:05:56,549 - cliveBot - ERROR - Communication Error with Clive message:list indices must be integers or slices, not str
+2018-05-17 13:07:58,294 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:08:14,057 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:08:14,058 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:08:14,058 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:08:14,058 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:08:14,058 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:08:14,059 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:08:14,770 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:08:16,568 - cliveBot - ERROR - Communication Error with Clive message:list indices must be integers or slices, not str
+2018-05-17 13:09:16,331 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:09:31,832 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:09:31,833 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:09:31,833 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:09:31,833 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:09:31,833 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:09:31,834 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:09:32,519 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:09:32,696 - cliveBot - ERROR - Communication Error with Clive message:'NoneType' object is not iterable
+2018-05-17 13:12:13,578 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:12:23,203 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:12:23,204 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:12:23,204 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:12:23,204 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:12:23,204 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:12:23,205 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:12:24,086 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:12:24,359 - cliveBot - ERROR - Communication Error with Clive message:'NoneType' object is not iterable
+2018-05-17 13:14:12,667 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:14:23,954 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:14:23,955 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:14:23,955 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:14:23,955 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:14:23,955 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:14:23,956 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:14:24,653 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:14:24,933 - cliveBot - ERROR - Communication Error with Clive message:'NoneType' object is not iterable
+2018-05-17 13:17:34,896 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:17:48,775 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:17:48,776 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:17:48,776 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:17:48,776 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:17:48,776 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:17:48,777 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:17:49,593 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:17:49,676 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:17:50,467 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-17 13:17:53,810 - cliveBot - INFO - Order executed
+2018-05-17 13:23:52,391 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:24:03,308 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:24:03,309 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:24:03,309 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:24:03,309 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:24:03,309 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:24:03,310 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:24:04,174 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:24:04,242 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:24:05,062 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-17 13:24:08,421 - cliveBot - INFO - Order executed
+2018-05-17 13:26:08,554 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:26:23,623 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:26:23,623 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:26:23,623 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:26:23,624 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:26:23,624 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:26:23,624 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:26:24,414 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:26:24,482 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:26:25,261 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-17 13:26:29,214 - cliveBot - INFO - Order executed
+2018-05-17 13:27:12,647 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-17 13:27:22,180 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:27:22,180 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:27:22,180 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:27:22,180 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:27:22,180 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:27:22,181 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-17 13:27:22,988 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:27:23,064 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-17 13:27:23,795 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-17 13:27:27,025 - cliveBot - INFO - Order executed
+2018-05-17 13:28:50,579 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:28:50,579 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:28:50,579 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:28:50,579 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:28:50,579 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:28:50,580 - cliveBot - INFO - Sending Order to Bot: Clive reserve 10.16.0.114 11:22:33:44:55:66
+2018-05-17 13:28:51,584 - cliveBot.CnrAPI - INFO - CNR API Call executed sucessfully
+2018-05-17 13:28:51,585 - cliveBot.CnrAPI - INFO - Lease reservation executed sucessfully
+2018-05-17 13:28:52,229 - cliveBot - INFO - Order executed
+2018-05-17 13:29:21,761 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-17 13:29:21,761 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-17 13:29:21,761 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-17 13:29:21,762 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-17 13:29:21,762 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-17 13:29:21,763 - cliveBot - INFO - Sending Order to Bot: Clive delres 10.16.0.114
+2018-05-17 13:29:22,768 - cliveBot.CnrAPI - INFO - Lease info deleted sucessfully
+2018-05-17 13:29:23,253 - cliveBot - INFO - Order executed
+2018-05-17 13:53:37,613 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 13:53:37,979 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 13:58:30,933 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 13:58:31,207 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 14:53:37,256 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 14:53:37,694 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 14:58:30,722 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 14:58:30,975 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 15:53:38,415 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 15:53:38,611 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 15:58:30,470 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 15:58:30,920 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 16:53:38,255 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 16:53:38,398 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 16:58:30,025 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 16:58:30,204 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 17:53:37,870 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 17:53:38,037 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 17:58:30,507 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 17:58:30,673 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 18:03:55,860 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 18:03:56,087 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 18:03:56,090 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 18:53:38,537 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 18:53:38,693 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 18:58:29,869 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 18:58:30,006 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 19:12:09,964 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 19:12:10,174 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 19:12:10,177 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 19:16:34,725 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 19:16:34,729 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 19:16:34,731 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 19:53:39,349 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 19:53:39,636 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 19:58:30,791 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 19:58:31,209 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 20:44:13,949 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 20:44:23,831 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 20:44:57,127 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 20:45:03,528 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 20:46:08,840 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 20:46:08,848 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 20:46:08,855 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 20:46:09,885 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 20:46:15,514 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 20:46:18,185 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 20:46:21,854 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 20:53:39,408 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 20:53:39,563 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 20:58:30,596 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 20:58:30,745 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 21:06:14,967 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:11:20,112 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:15:03,453 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:15:03,456 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:15:03,655 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:16:09,216 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:17:47,442 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:17:47,444 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:17:47,651 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:18:04,396 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:18:04,398 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:18:04,615 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:20:00,229 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:20:00,233 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:20:00,416 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:20:36,628 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:20:36,632 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:20:36,844 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:21:29,127 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:21:29,131 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:21:29,327 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:22:46,829 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:22:46,837 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:22:47,026 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:23:49,121 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:26:18,599 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:26:18,603 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:26:18,803 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:27:02,894 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:27:02,904 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:27:03,089 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:27:16,737 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:27:16,746 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:27:16,941 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:27:22,937 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:27:22,939 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:27:23,128 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:28:01,081 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:28:01,092 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:28:01,263 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:29:36,638 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:29:36,640 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:29:36,836 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:30:13,395 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:30:13,398 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:30:13,591 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:30:19,354 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:30:19,541 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:30:19,542 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:30:37,787 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:30:37,789 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:30:37,953 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:31:14,874 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:31:14,881 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:31:15,082 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:32:05,560 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:32:05,766 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:32:05,768 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:33:17,918 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:33:17,921 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:33:18,103 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:33:40,537 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:33:40,539 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:33:40,541 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:35:49,930 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:35:49,939 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:35:50,134 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:39:26,184 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:39:26,380 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:39:26,383 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:43:29,840 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:43:29,841 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:43:30,024 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:43:41,240 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:43:41,242 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:43:41,432 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:44:14,377 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:44:14,380 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:44:14,382 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:49:27,242 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:49:27,245 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:49:27,448 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:50:30,426 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:50:30,430 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:50:30,624 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:50:47,833 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:50:47,835 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:50:48,034 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:52:15,222 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-17 21:52:15,225 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-17 21:52:15,433 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-17 21:53:39,603 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 21:53:39,753 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 21:58:29,706 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 21:58:29,863 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 22:53:39,335 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 22:53:39,568 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 22:58:29,632 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 22:58:29,785 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 23:53:40,307 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 23:53:40,580 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-17 23:58:29,147 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-17 23:58:29,310 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 00:53:39,837 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 00:53:39,991 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 00:58:28,615 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 00:58:28,759 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 01:53:40,026 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 01:53:40,184 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 01:58:28,560 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 01:58:28,875 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 02:53:40,897 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 02:53:41,078 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 02:58:28,017 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 02:58:28,243 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 03:53:40,534 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 03:53:40,711 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 03:58:28,437 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 03:58:28,708 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 04:53:41,149 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 04:53:41,521 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 04:58:28,239 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 04:58:28,373 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 05:53:40,836 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 05:53:41,066 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 05:58:28,154 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 05:58:28,519 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 06:53:41,134 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.249 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 06:53:41,626 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 06:58:28,121 - cliveBot.ELK - INFO - Receiving message from ELK and Sending it to room Clive Machine Shop. Content=10.11.0.250 - Unequal weight routing is not supported in L3 over vPC. Please make sure both vPC peers have equal link cost configuration.
+2018-05-18 06:58:28,862 - cliveBot.ELK - INFO - ELK info received and processed sucessfully!!!
+2018-05-18 07:37:42,867 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-18 07:37:42,869 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-18 07:37:43,076 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-18 07:40:10,508 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 07:40:10,509 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 07:40:10,509 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 07:40:10,509 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 07:40:10,509 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 07:40:10,510 - cliveBot - INFO - Sending Order to Bot: Clive help
+2018-05-18 07:40:11,623 - cliveBot - INFO - Order executed
+2018-05-18 07:40:26,357 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 07:40:26,357 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 07:40:26,357 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 07:40:26,357 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 07:40:26,358 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 07:40:26,358 - cliveBot - INFO - Sending Order to Bot: Clive whereis 10.16.0.102
+2018-05-18 07:40:27,220 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 07:40:28,361 - cliveBot - ERROR - Communication Error with Clive message:local variable 'ipv6' referenced before assignment
+2018-05-18 07:40:43,003 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 07:40:43,003 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 07:40:43,003 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 07:40:43,003 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 07:40:43,004 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 07:40:43,004 - cliveBot - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-18 07:40:44,814 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 07:40:44,895 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 07:40:45,985 - cliveBot - ERROR - Communication Error with Clive message:local variable 'ipv6' referenced before assignment
+2018-05-18 07:41:05,469 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 07:41:05,469 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 07:41:05,469 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 07:41:05,469 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 07:41:05,469 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 07:41:05,470 - cliveBot - INFO - Sending Order to Bot: Clive showint 10.101.1.50 1/0/1
+2018-05-18 07:41:13,299 - cliveBot - INFO - Order executed
+2018-05-18 07:50:14,150 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 07:50:14,150 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 07:50:14,150 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 07:50:14,150 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 07:50:14,151 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 07:50:14,151 - cliveBot - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-18 07:50:14,944 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 07:50:15,011 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 07:50:15,812 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-18 07:50:19,695 - cliveBot - INFO - Order executed
+2018-05-18 08:00:35,920 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 08:00:35,921 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 08:00:35,921 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 08:00:35,921 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 08:00:35,921 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 08:00:35,922 - cliveBot - INFO - Sending Order to Bot: Clive getbitcoin
+2018-05-18 08:00:37,778 - cliveBot - INFO - Order executed
+2018-05-18 08:05:44,588 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 08:05:44,588 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 08:05:44,588 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 08:05:44,589 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 08:05:44,589 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 08:05:44,589 - cliveBot - INFO - Sending Order to Bot: Clive ruthere
+2018-05-18 08:05:48,678 - cliveBot - INFO - Order executed
+2018-05-18 08:06:00,483 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 08:06:00,483 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 08:06:00,483 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 08:06:00,483 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 08:06:00,483 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 08:06:00,484 - cliveBot - INFO - Sending Order to Bot: Clive dasdasdasda
+2018-05-18 08:06:05,212 - cliveBot - INFO - Order executed
+2018-05-18 08:11:36,727 - cliveBot - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 08:11:36,727 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 08:11:36,728 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 08:11:36,728 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 08:11:36,728 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 08:11:36,729 - cliveBot - INFO - Sending Order to Bot: Clive getnbascores
+2018-05-18 08:11:40,782 - cliveBot - INFO - Order executed
+2018-05-18 09:53:46,251 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 09:53:47,141 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:02:50,785 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:04:23,926 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:04:33,445 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:04:33,445 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:04:33,445 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:04:33,446 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:04:33,446 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:04:33,447 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive ruthere
+2018-05-18 10:04:36,843 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:08:22,235 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:08:31,291 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:08:31,292 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:08:31,292 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:08:31,292 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:08:31,292 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:08:31,293 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive ruthere
+2018-05-18 10:08:34,972 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:14:07,678 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:14:07,678 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:14:07,678 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:14:07,678 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:14:07,679 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:14:07,679 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-18 10:14:09,208 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:14:09,285 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:14:10,313 - cliveBot.WebHook - ERROR - Communication Error with Clive message:local variable 'ipv6' referenced before assignment
+2018-05-18 10:16:20,748 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:16:31,486 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:16:31,487 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:16:31,487 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:16:31,487 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:16:31,487 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:16:31,488 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-18 10:16:33,023 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:16:33,099 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:16:33,868 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-18 10:16:39,033 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:17:15,847 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:17:15,847 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:17:15,847 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:17:15,848 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:17:15,848 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:17:15,849 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive whereis 10.16.0.102
+2018-05-18 10:17:16,660 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:17:17,454 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-18 10:17:21,982 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:31:57,220 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:31:57,221 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:31:57,221 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:31:57,221 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:31:57,221 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:31:57,222 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find brbeaver
+2018-05-18 10:31:59,528 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:31:59,603 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:32:00,300 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-18 10:32:07,699 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:43:48,029 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:43:48,942 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:44:06,255 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:44:06,255 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:44:06,256 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:44:06,256 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:44:06,256 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:44:06,257 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-18 10:44:07,727 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:44:07,792 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:44:07,852 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:44:08,266 - cliveBot.WebHook - ERROR - Communication Error with Clive message:list indices must be integers or slices, not str
+2018-05-18 10:46:34,185 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:46:47,234 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:46:47,234 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:46:47,234 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:46:47,234 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:46:47,235 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:46:47,235 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-18 10:46:48,986 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:46:49,047 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:46:49,102 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:46:49,578 - cliveBot.WebHook - ERROR - Communication Error with Clive message:list indices must be integers or slices, not str
+2018-05-18 10:51:55,553 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 10:52:13,915 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:52:13,915 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:52:13,916 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:52:13,916 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:52:13,916 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:52:13,917 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find 10.16.0.102
+2018-05-18 10:52:15,395 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:52:15,459 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:52:15,538 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:52:16,335 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-18 10:52:21,524 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:52:40,198 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:52:40,199 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:52:40,199 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:52:40,199 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:52:40,199 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:52:40,200 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive find brbeaver
+2018-05-18 10:52:42,067 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:52:42,140 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:52:42,193 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:52:42,971 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-18 10:52:49,702 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:53:06,626 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:53:06,627 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:53:06,627 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:53:06,627 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:53:06,627 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:53:06,628 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive whereis 10.16.0.102
+2018-05-18 10:53:07,572 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:53:07,643 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:53:08,380 - cliveBot.CmxAPI - INFO - CMX info found for query 10.16.0.102
+2018-05-18 10:53:11,500 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 10:53:30,265 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 10:53:30,265 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 10:53:30,265 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 10:53:30,265 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 10:53:30,265 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 10:53:30,266 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive whereis brbeaver
+2018-05-18 10:53:30,926 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:53:31,008 - cliveBot.CmxAPI - INFO - CMX api query executed sucessfully
+2018-05-18 10:53:31,776 - cliveBot.CmxAPI - INFO - CMX info found for query brbeaver
+2018-05-18 10:53:35,156 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 12:19:42,414 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 12:31:18,251 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 12:48:10,821 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 12:48:11,750 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 12:48:25,453 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 12:48:25,454 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 12:48:25,454 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 12:48:25,454 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 12:48:25,455 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 12:48:25,455 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive getshower
+2018-05-18 12:48:27,074 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 12:49:11,400 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 12:49:11,401 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 12:49:11,401 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 12:49:11,401 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 12:49:11,401 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 12:49:11,402 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive getshower
+2018-05-18 12:49:12,760 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 12:52:08,058 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 12:52:17,271 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 12:52:17,272 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 12:52:17,272 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 12:52:17,272 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 12:52:17,272 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 12:52:17,273 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive getshowerthought
+2018-05-18 12:52:18,767 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 12:56:08,393 - cliveBot.MAIN - INFO - Bot Server started Sucessfully!!
+2018-05-18 12:58:39,625 - cliveBot.MON - INFO - Bot Command List extracted sucessfully. 13 Commands registered
+2018-05-18 12:58:39,629 - cliveBot.MON - INFO - URI List extracted sucessfully. 5 Endpoints attached
+2018-05-18 12:58:39,844 - cliveBot.MON - INFO - Backend Checked Sucessfully
+2018-05-18 13:28:29,451 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 13:28:29,452 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 13:28:29,452 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 13:28:29,452 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 13:28:29,452 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 13:28:29,453 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive getshowerthought
+2018-05-18 13:28:30,916 - cliveBot.WebHook - INFO - Order executed
+2018-05-18 13:28:52,482 - cliveBot.WebHook - INFO - Receiving Data from Spark Room Clive Machine Shop
+2018-05-18 13:28:52,482 - cliveBot.PrimeAPI - INFO - Prime API in use
+2018-05-18 13:28:52,482 - cliveBot.CmxAPI - INFO - CMX API in use
+2018-05-18 13:28:52,482 - cliveBot.CnrAPI - INFO - CNR API in use
+2018-05-18 13:28:52,482 - cliveBot.DeviceControl - INFO - Device Control has been requested
+2018-05-18 13:28:52,483 - cliveBot.WebHook - INFO - Sending Order to Bot: Clive getbitcoin
+2018-05-18 13:28:53,881 - cliveBot.WebHook - INFO - Order executed
