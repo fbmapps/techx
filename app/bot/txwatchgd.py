@@ -20,7 +20,7 @@ import requests
 from models import *
 from halo import Halo
 from pyfiglet import Figlet
-
+import logging
 
 #===== Database ORM Libraries =======
 from sqlalchemy import create_engine
@@ -31,7 +31,7 @@ from sqlalchemy.orm import sessionmaker
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-
+logger = logging.getLogger('cliveBot.Watcher')
 
 #Common Functions
 def DateDiff(dtNew, dtOld):
@@ -53,7 +53,8 @@ def DataCollector(p,dbs):
    devs = p.getAllDevices()
    devices = [] 
    devCollected = devs['queryResponse']['@count']
-     
+   
+   logger.info('Data Collection Started for Device Status')  
    #Process the DataSet
    for dev in devs['queryResponse']['entity']:
       
@@ -100,7 +101,6 @@ def DataCollector(p,dbs):
          dbs.add(new_dev)
          dbs.commit()
                      
- 
                          
       else:     #The device record exist in Table
          #Update Existing Record
@@ -120,16 +120,7 @@ def DataCollector(p,dbs):
             #TODO Notify if the Status Change
             record.bot_notify_request = False
          
-
          dbs.commit()
-        
-      
-
-
-
-
-
-
       d = {'devName' : devName,
            'ipAddress' : devIPAdd,
            'location' : devLocation,
@@ -139,6 +130,7 @@ def DataCollector(p,dbs):
           }
 
       devices.append(d)
+      logger.info('Data Collection Process Complete')
 
 
 
@@ -146,6 +138,8 @@ def DataCollector(p,dbs):
 
 
 def SparkNotifier(dbs):
+
+   logger.info('Notification Process started')
    records = dbs.query(Notification).filter(Notification.bot_notify_request==True)
   
    msg = ''
@@ -174,14 +168,8 @@ def SparkNotifier(dbs):
    payload = json.dumps(note)
    
    r = requests.request('POST',bot_url,data=payload,headers=headers)
-
-
-   
-       
-
-
-
-   return {'response' : r.status_code , 'data': msg}
+   logger.info('Notification Process completed')
+   return {'status_code' : r.status_code , 'data': msg}
 
 
 
@@ -209,12 +197,20 @@ def main():
 
    #Send Message for bot Request = True
    spinner.start(text='Sending Notification...')
-   response = SparkNotifier(dbs)     
-   spinner.succeed(text='Notification sended')   
+   try:
+        response = SparkNotifier(dbs)
+        logger.info('Notification sent')
+        logger.info('Process Completed')
+        spinner.suceed(text='Notification sended')
+        spinner.suceed(text='Process completed') 
+        
+   except Exception as e:
+        logger.error('Notification Fails message: {}'.format(e))
+        spinner.fail(text='Notification failed')   
+        response = {"status_code":500}
 
-
-   spinner.succeed(text='Process Complete')    
-   #return {"response" : "200 OK" }
+     
+   return response
 
 
 
