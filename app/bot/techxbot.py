@@ -52,6 +52,7 @@ bot_room = str(os.environ['BOT_ROOM'])
 req_room = str(os.environ['REQ_ROOM'])
 slg_room = str(os.environ['SLG_ROOM'])
 clus_tkn = str(os.environ['SPARK_ACCESS_TOKEN'])
+clive_room = str(os.environ['SPARK_BASE_ROOM'])
 
 msg_url = "https://api.ciscospark.com/v1/messages/"
 headers = {"Accept" : "application/json", 
@@ -297,19 +298,47 @@ def txbIFTTT():
     #data from IFTTT Webhook
     cmd = request.json
     action = str(cmd['cmd']).strip().lower()
-    personId = str(cmd['personEmail']).strip().lower()
-    
+    _email = str(cmd['personEmail']).strip().lower()
+    msg=''
+        
+ 
+    logger = logging.getLogger('cliveBot.IOT') 
+    logger.info('A request was received via IOT Device')    
 
-    bot = theBot()
-    resp =  bot.getOrders(personId,action)
-    
-    url = ''
-    msg = resp['msg']
-    if resp['files'] != '': 
-       url = resp['files']                                      
 
-    r = botMessenger(msg,url)
-    return { "response" : r }
+    #Migration to CiscoSparkAPI and Clive
+    clive_token =  clus_tkn
+    if not clive_token:
+        clive_token = os.environ['SPARK_ACCESS_TOKEN']
+        logger.warning('Using default token. Please check the environmental variables ')
+
+
+    roomId = clive_room
+    if not roomId:
+        roomId = os.environ['SPARK_BASE_ROOM']
+        logger.warning('Using Default Room. Please check the environmental variables' )
+
+
+    try:
+        clive = CiscoSparkAPI(access_token=clive_token)
+        people = clive.people.list(email=_email,max=1)
+        for person in people:
+            personId = person.id
+        room = clive.rooms.get(roomId)
+        bot = theBot()
+        resp =  bot.getOrders(personId,action,roomId)
+        logger.info('Responding IOT requests to room. Content={}'.format(room.title,str(msg)))
+        msg = resp['msg']
+        clive.messages.create(roomId,markdown=msg)
+        logger.info('IOT Order Executed')
+        response = {"status_code" : 200}
+    except (ValueError,TypeError,Exception) as e:
+        logger.error('A request from IOT Device has failed message: {}'.format(e))
+        return {"status_code" :  500} 
+
+
+
+    return response
 
 
 @post("/techx/")
