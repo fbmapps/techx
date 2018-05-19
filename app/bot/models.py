@@ -995,7 +995,8 @@ class theBot:
            msg = today_gm + today_match
         elif 'getbitcoin' in in_message:
            rate = self.btc.getBTCRate()
-           msg = "The Current Price of Bitcoin is $**{0}**".format(str(rate.json()['bpi']['USD']['rate'])) 
+           price = str(rate.json()['bpi']['USD']['rate'])
+           msg = "The Current Price of Bitcoin is $**{0}**".format(price[:-2]) 
         elif 'getprime' in in_message:
            devs = self.pri.getDevices()
            if int(devs['queryResponse']['@count']) == 0:
