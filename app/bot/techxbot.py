@@ -2,8 +2,8 @@
 TECHX BOT FUNCTIONAL SCRIPT
 CREATED BY FRBELLO AT CISCO DOT COM
 DATE NOV 2017
-VERSION 0.3
-STATE BETA
+VERSION 1.0
+STATE RC1
 
 DESCRIPTION: 
 This is the script hosting all the logic for the bot to hears calls from the webhook
@@ -12,8 +12,14 @@ this will be publish the GET and POST methods for spark bot.
 '''
 
 #Libraries
+#========= microframeworks ====================
 from bottle import post,get,put,delete
 from bottle import request, response, template, static_file, hook
+
+from flask import Flask, request, render_template as template, make_response, jsonify, abort
+from flask_ask import Ask, statement, question, session
+
+#======== Common Libraries ====================
 import re, json
 import requests
 import os,sys
@@ -62,11 +68,17 @@ headers = {"Accept" : "application/json",
           }
 
 
+#========== Flask Instance ==========
+app = Flask(__name__)
+ask = Ask(app,'/clive_skill')
 
+
+#========== Versioning ==============
 __author__ = "Freddy Bello"
 __author_email__ = "frbello@cisco.com"
 __copyright__ = "Copyright (c) 2016-2018 Cisco and/or its affiliates."
 __license__ = "MIT"
+
 
 #=========== Define a Logger ==============#
 logger = logging.getLogger('cliveBot')
@@ -132,7 +144,7 @@ def enable_cors():
     response.headers['Content-Type'] = _content_type
 
 
-#======= Web Endpoints for the Bot ==========#
+#======= Bottle GET Endpoints for the Bot ==========#
 @get("/techx/v1/mon/endpoints/")
 def getEnpoints():
     '''
@@ -193,7 +205,57 @@ def img(filepath):
 
 
 
-#========== POST CALLS TO BOT ==================
+#========= Flask GET URI Methods ===================
+
+@app.route('/techx/v1/base/')
+def test_uri():    
+    return "<h1>Bot Served by Flasks</h1>"
+
+@app.route('/techx/v1/mon/endpoints/',methods=['GET'])
+def flask_endpoints():
+    edp = getEnpoints()
+    return jsonify(edp) 
+
+@app.route('/techx/v1/mon/orders/',methods=['GET'])
+def flask_orders():
+    orders =  getOrdersList()
+    return jsonify(orders)
+
+@app.route('/techx/v1/mon/check/',methods=['GET'])
+def flask_health():
+    health = getHealth()
+    return jsonify(health) 
+
+#========== Flask POST URI Methods =============
+
+@app.route('/techx/v2/elk/',methods=['POST'])
+def flask_ELK():
+    resp = txtElkNotify()
+    return jsonify(resp) 
+
+@app.route('/techx/v2/alert/',methods=['POST'])
+def flask_Alert():
+    resp = txtReceiveAlarm()
+    return jsonify(resp)
+
+@app.route('/techx/v1/note/',methods=['POST'])
+def flask_Note():
+    resp = txBotNotify()
+    return jsonify(resp)
+
+@app.route('/techx/v1/ifttt/',methods=['POST'])
+def flask_IFTTT():
+    resp = txbIFTTT()
+    return jsonify(resp)
+
+@app.route('/techx/',methods=['POST'])
+def flask_Bot():
+    resp = techxbot()
+    return jsonify(resp)
+ 
+
+
+#========== Bottle POST CALLS TO BOT ==================
 @post('/techx/v1/alert/')
 def txtReceiveAlarm():
     '''
@@ -219,7 +281,6 @@ def txtElkNotify():
         note = request.json
     except:
         return
-
     roomId = slg_room
     if not roomId:
         roomId = os.environ['SLG_ROOM']
@@ -239,7 +300,7 @@ def txtElkNotify():
         room = clive.rooms.get(roomId)
         logger.info('Receiving message from ELK and Sending it to room {}. Content={}'.format(room.title,str(msg)))
         clive.messages.create(roomId,markdown=msg)
-    except (TypeError,ValueError,SparkApiError)as e:
+    except (TypeError,ValueError)as e:
         msg="ELK is trying to tell me something but I am unable to parse the message"
         clive.messages.create(roomId,text=msg) 
         logger.error('ELK Message Reception Fails message:{}'.format(e))
@@ -356,17 +417,23 @@ def techxbot():
     
     logger = logging.getLogger('cliveBot.WebHook')
 
-
     #Techx.bot Instance
     webhook = request.json   #INFO FROM SPARK IN JSON FORMAT
+    #print(webhook['data']['personId'])
     #Clive Instance
+    
+    req_room = webhook['data']['roomId']
+
+    if req_room != os.environ['SLG_ROOM']:
+        #print('Ctach Non SLSG')
+        return {"status_code" : 203}
+    
+     
     
     clive_token = clus_tkn
     if not clive_token:
          clive_token = os.environ['SPARK_ACCESS_TOKEN']
          logger.warning('Using the embeeded token. Please check environmentals variables')         
-
-
 
     clive = CiscoSparkAPI(access_token=clive_token)
     clive_wh = Webhook(webhook)
@@ -376,9 +443,12 @@ def techxbot():
     me = clive.people.me()
     files = []
 
+
+
     try:
         if message.personId == me.id:
-            return
+            #logger.warning('Can send a message to myself')
+            return {"status_code":500}  
         else:
             logger.info('Receiving Data from Spark Room {}'.format(room.title))
             bot = theBot()
@@ -393,12 +463,27 @@ def techxbot():
             else:
                 clive.messages.create(room.id,markdown=msg)
             logger.info('Order executed')
+            respo = {"status_code": 200}
     except (TypeError,ValueError,Exception) as e:
         msg="Unable to execute the task"
         clive.messages.create(room.id,text=msg) 
         logger.error("Communication Error with Clive message:{}".format(e))
+        respo = {"status_code" : 500}
+
+    return respo
 
 
+
+
+#===================== Clive Alexa Skill ===========================#
+
+@ask.launch
+def start_clive_skill():
+    welcome_message = template('welcome')
+    reprompt_message = template('reprompt')
+
+    return question(welcome_message) \
+           .reprompt(reprompt_message)
 
 
 

@@ -666,9 +666,10 @@ class SwitchPort():
             'description Configured by Sparkbot',
             'switchport',
             'switchport mode access',
-            'switchport port-security maximum 10',
+            'switchport port-security maximum 1',
             'switchport port-security',
             'switchport port-security aging time 10',
+            'switchport port-security violation protect',
             'load-interval 30',
             'ipv6 nd raguard',
             'ipv6 dhcp guard',
@@ -685,6 +686,7 @@ class SwitchPort():
             'switchport',
             'switchp mode trunk',
             'switchp non',
+            'switchport trunk native vlan 999',
             'load-interval 30',
             'udld port aggressive',
             'spanning-tree link-type point-to-point',
@@ -1068,7 +1070,7 @@ class theBot:
                 interface = interface2
             else: 
                 interface = interface1
-            vlan = ''.join(re.findall(r'\bnocwired\b|\bciscotv\b|\bvoice\b|\bregistration\b|\bsesscap\b|\bsignage\b|\bcamera\b|\bap\b|\bspeaker\b|\bdevnet\b|\bwisp\b|\bnocpublic\b|\bregpublic\b|\bocccpublic\b|\blabspublic\b|\bciscotvpublic\b|\bhyattpublic\b|\bwos\w{1,7}\b',in_message))
+            vlan = ''.join(re.findall(r'\btrunk\b|\bnocwired\b|\bciscotv\b|\bvoice\b|\bregistration\b|\bsesscap\b|\bsignage\b|\bcamera\b|\bap\b|\bspeaker\b|\bdevnet\b|\bwisp\b|\bnocpublic\b|\bregpublic\b|\bocccpublic\b|\blabspublic\b|\bciscotvpublic\b|\bhyattpublic\b|\bwos\w{1,7}\b',in_message))
             device_status = self.svl.CheckConnectivity(ip)
             ifc_check = self.svl.CheckInterfaceConfig(ip,interface)
             #config = '\n**********Current Config**********\n\n' + current_config['message']

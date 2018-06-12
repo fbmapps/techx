@@ -1,0 +1,6 @@
+welcome: Hello my pals there at the Network Operation Center for Cisco Live 2018 in Orlando, Florida. What would you like me to do?
+reprompt: I didn't quite get that. Please said it again what you would like me to do.
+angry_goodbye: I am not sure why you call me, but remember that Clive has more info to give you on Webex Teams Room...bye
+ipaddress: it seems You are trying to find this IP address {{ipaddr}}, is that correct?
+happy_goodbye: Glad to hear that!!. If you need me just call my name again, I am at your service. See ya!!!
+username: it seems You are trying to find this username {{username}}, is that correct?
