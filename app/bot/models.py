@@ -171,7 +171,7 @@ class PrimeAPI():
                client_connection_device_name = response['queryResponse']['entity'][0]["clientDetailsDTO"]["deviceName"]
                client_device_type = response['queryResponse']['entity'][0]["clientDetailsDTO"]["deviceType"]
                client_mac_address = response['queryResponse']['entity'][0]["clientDetailsDTO"]["macAddress"]
-               client_username = response['queryResponse']['entity'][0]["clientDetailsDTO"]["userName"]
+               client_username = '' #response['queryResponse']['entity'][0]["clientDetailsDTO"]["userName"]
                client_vendor = response['queryResponse']['entity'][0]["clientDetailsDTO"]["vendor"]
                client_vlanid = response['queryResponse']['entity'][0]["clientDetailsDTO"]["vlan"]
 
@@ -190,8 +190,8 @@ class PrimeAPI():
                    cx = CmxAPI()
                    cxmsg,mapw = cx.getLocation(client_ip)
                else:
-                   mapw = 'https://cdn4.iconfinder.com/data/icons/online-store/300/404-512.png' 
-                
+                   #mapw = 'https://cdn4.iconfinder.com/data/icons/online-store/300/404-512.png' 
+                   mapw = 'https://cdn0.iconfinder.com/data/icons/cloud-soft/512/close_exit_cancel_logout_log_out_terminate_stop_execution-512.png'             
                 
         return{"clt_conn_type" : client_connection_type, "location" : user_location, "status_code" : 200, "map" : mapw}
 
@@ -1139,12 +1139,14 @@ class theBot:
         elif 'find' in in_message:
             #Data Parser
             query = in_message.split('find ',)[1]
+            #print(in_message.split('find ',)[1])
             ip = ''.join(re.findall('\w{1,3}\.\w{1,3}\.\w{1,3}\.\w{1,3}',in_message))
             mac = ''.join(re.findall(r'(?:[0-9|a-f|A-F]:?){12}',in_message))
             if not mac and not ip:
                #Trying to find a User
                user = query.strip()
                param = 'userName={0}'.format(user)
+               #param = 'ipAddress={0}'.format(ip)
             elif not mac:
                #Trying to find by IP Address
                param = 'ipAddress={0}'.format(ip)
@@ -1152,7 +1154,7 @@ class theBot:
                #Trying to find by MAC Address
                param = 'macAddress="{0}"'.format(str(mac))
 
-            #print(param)
+            print(param)
             result = self.pri.find(param)
             files=[]
             if result['status_code']==404:
