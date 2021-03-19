@@ -21,7 +21,7 @@ gunicorn==19.7.1
 halo==0.0.12
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 log-symbols==0.0.11
 lxml==4.1.1
 MarkupSafe==1.0
