@@ -31,7 +31,7 @@ numpy==1.13.3
 olefile==0.44
 paramiko==2.4.1
 pexpect==4.3.0
-Pillow==4.3.0
+Pillow==9.0.1
 psycopg2==2.7.3.2
 ptyprocess==0.5.2
 pyasn1==0.4.2
