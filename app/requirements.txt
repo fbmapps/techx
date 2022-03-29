@@ -29,7 +29,7 @@ matplotlib==2.1.0
 netmiko==2.1.1
 numpy==1.13.3
 olefile==0.44
-paramiko==2.4.1
+paramiko==2.10.1
 pexpect==4.3.0
 Pillow==4.3.0
 psycopg2==2.7.3.2
