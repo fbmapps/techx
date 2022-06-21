@@ -19,7 +19,7 @@ cycler==0.10.0
 gunicorn==19.7.1
 idna==2.6
 matplotlib==2.1.0
-numpy==1.13.3
+numpy==1.22.0
 olefile==0.44
 pexpect==4.3.0
 Pillow==4.3.0
@@ -42,7 +42,7 @@ cycler==0.10.0
 gunicorn==19.7.1
 idna==2.6
 matplotlib==2.1.0
-numpy==1.13.3
+numpy==1.22.0
 olefile==0.44
 pexpect==4.3.0
 Pillow==4.3.0
