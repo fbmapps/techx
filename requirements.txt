@@ -1,6 +1,6 @@
 bottle==0.12.13
 bottle-sqlalchemy==0.4.3
-certifi==2017.11.5
+certifi==2022.12.7
 chardet==3.0.4
 gunicorn==19.7.1
 idna==2.6
@@ -13,7 +13,7 @@ SQLAlchemy==1.1.15
 urllib3==1.22
 bottle==0.12.13
 bottle-sqlalchemy==0.4.3
-certifi==2017.11.5
+certifi==2022.12.7
 chardet==3.0.4
 cycler==0.10.0
 gunicorn==19.7.1
@@ -36,7 +36,7 @@ SQLAlchemy==1.1.15
 urllib3==1.22
 bottle==0.12.13
 bottle-sqlalchemy==0.4.3
-certifi==2017.11.5
+certifi==2022.12.7
 chardet==3.0.4
 cycler==0.10.0
 gunicorn==19.7.1
